@@ -6,24 +6,24 @@
 #    By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/16 18:09:02 by jisokang          #+#    #+#              #
-#    Updated: 2022/01/16 18:32:02 by jisokang         ###   ########.fr        #
+#    Updated: 2022/01/20 00:35:48 by jisokang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= megaphone
 
 CC		= clang++
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
 
 SRCS	= megaphone.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 %.o : %.cpp
-	$(CC) $(CCFLAG) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(CCFLAG) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 all : $(NAME)
 
@@ -33,5 +33,5 @@ clean :
 fclean : clean
 	$(RM) $(NAME)
 
-re :fclean all
+re : fclean all
 
