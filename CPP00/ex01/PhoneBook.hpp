@@ -6,11 +6,12 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:59:40 by jisokang          #+#    #+#             */
-/*   Updated: 2022/01/22 16:39:35 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:30:18 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip> //for std::setw()
 #include <string>
 #include "color.hpp"
 
