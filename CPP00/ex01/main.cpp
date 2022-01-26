@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:37:40 by jisokang          #+#    #+#             */
-/*   Updated: 2022/01/26 22:53:02 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/01/26 22:58:55 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ int	main(void)
 		}
 		else if (command.compare("SEARCH") == 0)
 		{
+			if (cnt == 0)
+			{
+				std::cout << YELLOW"ERROR Phonebook is empty.\n"RESET;
+				continue;
+			}
 			std::cout << "|"
 				<< std::setw(10) << "Index" << "|"
 				<< std::setw(10) << "First Name" << "|"
