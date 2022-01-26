@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:59:40 by jisokang          #+#    #+#             */
-/*   Updated: 2022/01/25 16:30:18 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/01/26 22:47:18 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
 	PhoneBook(void);
 	~PhoneBook(void);
 	void add_book(void);
-	void print_book(void);
+	void print_book(int index);
+	void print_book_detail(void);
 };
 
