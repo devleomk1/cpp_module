@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 01:32:46 by jisokang          #+#    #+#             */
-/*   Updated: 2022/01/26 22:48:52 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/01/27 04:40:09 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,9 @@ void PhoneBook::add_book(void)
 void print_book_col(std::string name)
 {
 	if (name.length() > 10)
-	{
 		std::cout << name.substr(0,9) << ".|";
-	}
 	else
-	{
 		std::cout << std::setw(10) << name << "|";
-	}
 }
 
 void PhoneBook::print_book(int index)

@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:37:40 by jisokang          #+#    #+#             */
-/*   Updated: 2022/01/26 22:58:55 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/01/27 04:30:48 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ int	main(void)
 				continue;
 			}
 			std::cout << "|"
-				<< std::setw(10) << "Index" << "|"
-				<< std::setw(10) << "First Name" << "|"
-				<< std::setw(10) << "Last Name" << "|"
-				<< std::setw(10) << "Nick Name" << "|\n";
+					  << std::setw(10) << "Index" << "|"
+					  << std::setw(10) << "First Name" << "|"
+					  << std::setw(10) << "Last Name" << "|"
+					  << std::setw(10) << "Nick Name" << "|\n";
 			j = 0;
 			while (j < cnt - 1)
 			{
@@ -66,14 +66,12 @@ int	main(void)
 			std::cin >> command;
 			input_index = atoi(command.c_str());
 			if (is_number(command) == true && 0 <= input_index && input_index <= cnt)
-			{
 				phonebook[input_index].print_book_detail();
-			}
 			else
 				std::cout << YELLOW"ERROR Wrong index\n"RESET;
 		}
 		else
 			std::cout << YELLOW"ERROR Wrong Command\n"RESET;
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }
