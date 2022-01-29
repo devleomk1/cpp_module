@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 01:32:46 by jisokang          #+#    #+#             */
-/*   Updated: 2022/01/27 04:40:09 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/01/29 22:19:23 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ PhoneBook::~PhoneBook()
 void PhoneBook::add_book(void)
 {
 	std::cin.ignore();
-	//
 	std::cout << "First Name: ";
 	std::getline(std::cin, this->first_name);
 	std::cout << "Last Name: ";
