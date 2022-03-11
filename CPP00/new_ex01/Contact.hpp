@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 20:44:46 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/11 16:03:52 by jisokang         ###   ########.fr       */
+/*   Created: 2022/03/11 14:35:23 by jisokang          #+#    #+#             */
+/*   Updated: 2022/03/11 16:24:54 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <iomanip>
-#include "color.hpp"
-#include "Contact.hpp"
 
-# define MAX_PAGE	8
-
-class PhoneBook
+class Contact
 {
 private:
-	//자신 접근 O, 자식 접근 X, 외부 접근 X
-	Contact	contact[MAX_PAGE];
-	int		idx;
-	int		cnt;
+	int			idx;
+	std::string	first_name;
+	std::string	last_name;
+	std::string	nick_name;
+	std::string	phone_num;
+	std::string	secret;
 public:
-	//자신 접근 O, 자식 접근 O, 외부 접근 O
-	PhoneBook(void);
-	~PhoneBook(void);
-	void	AddBook();
-	void	SearchBook();
-	void	PrintBook();
+	Contact(void);
+	~Contact(void);
+	void	AddContact(int i);
+	void	PrintDetail(void);
+	void	PrintOneline(void);
+	void	StringShortener(std::string str, int max_len);
 };
-
