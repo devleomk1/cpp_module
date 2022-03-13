@@ -6,12 +6,13 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:44:46 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/11 16:03:52 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/12 14:18:57 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <iomanip>
+#include <stdlib.h>		//atoi
 #include "color.hpp"
 #include "Contact.hpp"
 
@@ -30,6 +31,7 @@ public:
 	~PhoneBook(void);
 	void	AddBook();
 	void	SearchBook();
-	void	PrintBook();
+	void	PrintTable();
+	void	SearchContact();
 };
 

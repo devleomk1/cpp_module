@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:35:44 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/11 16:28:44 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/12 11:25:08 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,13 @@ void Contact::PrintOneline(void)
 	StringShortener(last_name, 10);
 	StringShortener(nick_name, 10);
 	std::cout << "\n";
+}
+
+void Contact::PrintDetail(void)
+{
+	std::cout << "First Name : " << first_name << "\n";
+	std::cout << "Last Name  : " << last_name << "\n";
+	std::cout << "Nick Name  : " << nick_name << "\n";
+	std::cout << "Phone Num  : " << phone_num << "\n";
+	std::cout << "S E C R E T: " << secret << "\n";
 }
