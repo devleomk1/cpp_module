@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:35:44 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/12 11:25:08 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/15 20:31:32 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,24 @@ void Contact::AddContact(int i)
 	idx = i;
 	std::cout << "First Name : ";
 	std::getline(std::cin, first_name);
+	if (std::cin.eof())
+		return ;
 	std::cout << "Last Name : ";
 	std::getline(std::cin, last_name);
+	if (std::cin.eof())
+		return ;
 	std::cout << "Nick Name : ";
 	std::getline(std::cin, nick_name);
+	if (std::cin.eof())
+		return ;
 	std::cout << "Phone Num : ";
 	std::getline(std::cin, phone_num);
+	if (std::cin.eof())
+		return ;
 	std::cout << "SECRET : ";
 	std::getline(std::cin, secret);
+	if (std::cin.eof())
+		return ;
 }
 
 void Contact::StringShortener(std::string str, int max_len)
