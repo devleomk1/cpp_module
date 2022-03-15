@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:44:49 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/13 23:38:04 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:28:51 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ void	PhoneBook::SearchContact(void)
 {
 	int	input_index = 0;
 
-	std::cout << "Index : ";
+	std::cout << GREEN"@index>"RESET;
 	std::string str;
 	std::getline(std::cin, str);
 	input_index = atoi(str.c_str());
-	if (is_number(str) == true && input_index <= cnt && input_index >= 0)
+	if (is_number(str) == true && input_index < cnt && input_index >= 0)
 		contact[input_index].PrintDetail();
 	else
 		std::cout << YELLOW"[Error]"RESET" Wrong Index!\n";
