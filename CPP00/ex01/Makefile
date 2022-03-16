@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/16 18:09:02 by jisokang          #+#    #+#              #
-#    Updated: 2022/01/20 00:41:13 by jisokang         ###   ########.fr        #
+#    Created: 2022/03/16 14:23:23 by jisokang          #+#    #+#              #
+#    Updated: 2022/03/16 14:23:50 by jisokang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC		= clang++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
 
-SRCS	= main.cpp PhoneBook.cpp
+SRCS	= main.cpp PhoneBook.cpp Contact.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 %.o : %.cpp
@@ -34,4 +34,3 @@ fclean : clean
 	$(RM) $(NAME)
 
 re :fclean all
-
