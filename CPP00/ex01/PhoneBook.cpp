@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:44:49 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/15 20:07:18 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/16 14:33:17 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ PhoneBook::PhoneBook(void)
 	idx = 0;
 	cnt = 0;
 	std::cout << "=== PhoneBook 1980 ===\n";
+	std::cout << "Available Command is ["GREEN"ADD"RESET"], ["GREEN"SEARCH"RESET"], ["GREEN"EXIT"RESET"]\n";
 }
 
 PhoneBook::~PhoneBook(void)
