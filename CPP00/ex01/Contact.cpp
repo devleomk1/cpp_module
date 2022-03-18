@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:35:44 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/16 14:24:33 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/18 21:23:13 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void Contact::AddContact(int i)
 		return ;
 }
 
-void Contact::StringShortener(std::string str, int max_len)
+static void StringShortener(std::string str, int max_len)
 {
 	if ((int)str.length() > max_len)
 		std::cout << str.substr(0, max_len - 1) << ".│";
@@ -68,5 +68,5 @@ void Contact::PrintDetail(void)
 	std::cout << "Last Name  : " << last_name << "\n";
 	std::cout << "Nick Name  : " << nick_name << "\n";
 	std::cout << "Phone Num  : " << phone_num << "\n";
-	std::cout << "S E C R E T: " << secret << "\n";
+	std::cout << "SECRET     : " << secret << "\n";
 }

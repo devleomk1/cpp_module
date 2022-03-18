@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:44:49 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/16 14:33:17 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/18 21:22:12 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ PhoneBook::~PhoneBook(void)
 	std::cout << "=== BYE BYE ===\n";
 }
 
-bool	is_number(std::string str)
+static bool	is_number(std::string str)
 {
 	if (atoi(str.c_str()) != 0 || str.compare("0") == 0)
 		return (true);

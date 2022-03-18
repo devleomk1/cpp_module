@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:44:46 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/16 14:18:54 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/18 21:17:12 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ private:
 	Contact	contact[MAX_PAGE];
 	int		idx;
 	int		cnt;
+	void	PrintTable();
+	void	SearchContact();
 public:
 	//자신 접근 O, 자식 접근 O, 외부 접근 O
 	PhoneBook(void);
 	~PhoneBook(void);
 	void	AddBook();
 	void	SearchBook();
-	void	PrintTable();
-	void	SearchContact();
 };
 
 #endif

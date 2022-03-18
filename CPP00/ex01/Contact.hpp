@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:35:23 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/16 14:19:43 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/18 21:21:15 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ public:
 	void	AddContact(int i);
 	void	PrintDetail(void);
 	void	PrintOneline(void);
-	void	StringShortener(std::string str, int max_len);
 };
 
 #endif
