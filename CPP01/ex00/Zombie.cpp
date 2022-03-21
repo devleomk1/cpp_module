@@ -6,13 +6,13 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:49:07 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/19 22:42:27 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/21 21:19:19 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+Zombie::Zombie() : name(""), x(10)
 {
 	this->name = "";
 }
