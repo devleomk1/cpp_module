@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:48:55 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/23 19:21:45 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/23 20:09:02 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 
 int	main(void)
 {
-	Zombie	z0("Tom");
-	z0.announce();
-	
-	Zombie	*z1;
-	z1 = newZombie("Max");
-	z1->announce();
-	delete z1;
+	int		n = 10;
+	Zombie	*horde = zombieHorde(n, "Kim");
 
-	randomChump("Harry");
-
+	for (int i = 0; i < n; i++)
+		horde[i].announce();
+	delete[] horde;
 	return (EXIT_SUCCESS);
 }
