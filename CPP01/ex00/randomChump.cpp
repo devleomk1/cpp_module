@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:49:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/20 17:04:59 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/23 19:09:13 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void randomChump( std::string name )
 {
-	// Zombie	*zombie;
-
-	std::cout << "randomChump IN\n";
-	newZombie(name)->announce();
-	std::cout << "randomChump IN\n";
+	Zombie zombie = Zombie(name);
+	zombie.announce();
 }

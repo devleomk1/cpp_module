@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:49:10 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/22 22:30:06 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/23 19:11:32 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 # define ZOMBIE_HPP
 
 #include <iostream>
+#include "color.hpp"
 
 class Zombie
 {
 private:
 	std::string	name;
 public:
-	Zombie();
+	Zombie( std::string	name );
 	~Zombie();
 	void announce(void);
-	void setName( std::string name );
 };
 
 Zombie* newZombie( std::string name );
