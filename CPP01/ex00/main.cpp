@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:48:55 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/23 19:21:45 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/03/23 19:53:33 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	main(void)
 {
-	Zombie	z0("Tom");
+	Zombie	z0;
+	z0.setName("Tom");
 	z0.announce();
 	
 	Zombie	*z1;
