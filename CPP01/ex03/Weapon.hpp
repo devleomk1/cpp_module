@@ -6,7 +6,7 @@
 /*   By: devleo <devleo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 17:34:37 by devleo            #+#    #+#             */
-/*   Updated: 2022/04/04 18:02:00 by devleo           ###   ########.fr       */
+/*   Updated: 2022/04/10 14:50:31 by devleo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
     std::string type;
 public:
     Weapon(std::string type);
-    const std::string *getType();
+    const std::string &getType();
     void setType(std::string new_type);
     ~Weapon();
 };
