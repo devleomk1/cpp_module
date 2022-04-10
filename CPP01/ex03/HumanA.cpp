@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 14:40:07 by devleo            #+#    #+#             */
-/*   Updated: 2022/04/10 18:46:03 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/04/10 19:44:28 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ HumanA::HumanA( std::string new_name, Weapon &new_weapon_type ) : name(new_name)
 
 void HumanA::attack()
 {
-	std::cout << GREEN << this->name << RESET << " attacks with their " << this->weapon_type.getType() << std::endl;
+	std::cout << GREEN << this->name << RESET << " attacks with their " << BLUE << this->weapon_type.getType() << RESET << std::endl;
 }
 
 HumanA::~HumanA()

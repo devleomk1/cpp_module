@@ -6,12 +6,15 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 23:18:48 by devleo            #+#    #+#             */
-/*   Updated: 2022/04/10 18:46:06 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/04/11 03:22:58 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Weapon.hpp"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+
+# include <iostream>
+# include "Weapon.hpp"
 
 class HumanA
 {
@@ -24,3 +27,4 @@ public:
     ~HumanA();
 };
 
+#endif
