@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 03:29:47 by jisokang          #+#    #+#             */
-/*   Updated: 2022/04/16 23:09:17 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/04/16 23:19:45 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ std::string::size_type replace(std::string &str, std::string s1, std::string s2,
 	{
 		str.erase(n, s1.length());
 		str.insert(n, s2);
-		n += s1.length();
+		n += s2.length();
+		// std::cout << "s2.len : " << s2.length() << std::endl;
 		n = replace(str, s1, s2, n);
-		// std::cout << str << std::endl;
 	}
 	return(n);
 }
