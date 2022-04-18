@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 23:42:12 by jisokang          #+#    #+#             */
-/*   Updated: 2022/04/17 15:48:29 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/04/18 00:57:00 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Replace
 private:
 	/* data */
 public:
-	Replace( std::string &str, const std::string s1, const std::string s2 );
+	Replace();
 	void start( const std::string text_file, const std::string s1, const std::string s2 );
 	~Replace();
 };

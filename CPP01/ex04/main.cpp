@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 03:29:47 by jisokang          #+#    #+#             */
-/*   Updated: 2022/04/17 15:48:28 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/04/18 17:27:26 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,23 @@ int main(int argc, char **argv)
 		std::cout << YELLOW"Usage: replace [filename] [s1] [s2]\n"RESET;
 		return (EXIT_SUCCESS);
 	}
-	std::ifstream file(argv[1]);
-	std::string str;
+	// std::ifstream file(argv[1]);
+	// std::string str;
+	Replace	replace;
+	replace.start(argv[1], argv[2], argv[3]);
+	// if (file.is_open())
+	// {
+	// 	while (file)
+	// 	{
+	// 		getline(file, str);
+	// 		// Replace(str, argv[2], argv[3]);
+	// 		std::cout << str << std::endl;
+	// 	}
+	// 	file.close();
 
-	if (file.is_open())
-	{
-		while (file)
-		{
-			getline(file, str);
-			Replace(str, argv[2], argv[3]);
-			std::cout << str << std::endl;
-		}
-		file.close();
-
-	}
-	else
-		std::cout << YELLOW"Wrong Filename: File dose not exist\n"RESET;
+	// }
+	// else
+	// 	std::cout << YELLOW"Wrong Filename: File dose not exist\n"RESET;
 
 	return (EXIT_SUCCESS);
 }
