@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   color.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 00:33:44 by jisokang          #+#    #+#             */
-/*   Updated: 2022/04/19 22:33:08 by jisokang         ###   ########.fr       */
+/*   Created: 2022/01/20 00:59:06 by jisokang          #+#    #+#             */
+/*   Updated: 2022/03/11 14:12:41 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#ifndef COLOR_HPP
+# define COLOR_HPP
 
-# include <iostream>
+# define RED		"\x1b[31m"
+# define GREEN		"\x1b[32m"
+# define BLUE		"\x1b[34m"
+# define YELLOW		"\x1b[33m"
+# define MAGENTA	"\x1b[35m"
+# define CYAN		"\x1b[36m"
 
-class Harl
-{
-private:
-	//You have to create a Harl class with the following private member functions:
-	void debug( void );
-	void info( void );
-	void warning( void );
-	void error( void );
-public:
-	Harl();
-	~Harl();
-	void complain( std::string level );
-};
+# define RESET		"\x1b[0m"
 
 #endif
