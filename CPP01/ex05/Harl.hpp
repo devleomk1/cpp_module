@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 00:33:44 by jisokang          #+#    #+#             */
-/*   Updated: 2022/04/19 22:33:08 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/04/19 22:39:32 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define HARL_HPP
 
 # include <iostream>
+# include <string>
+# include "color.hpp"
 
 class Harl
 {

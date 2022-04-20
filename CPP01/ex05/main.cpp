@@ -6,7 +6,18 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 00:33:48 by jisokang          #+#    #+#             */
-/*   Updated: 2022/04/19 00:33:49 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/04/20 15:28:08 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Harl.hpp"
+
+int main(void)
+{
+	Harl q;
+
+	q.complain("debug");
+
+
+	return (EXIT_SUCCESS);
+}
