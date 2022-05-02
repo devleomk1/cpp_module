@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 14:40:07 by devleo            #+#    #+#             */
-/*   Updated: 2022/04/10 19:44:28 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/02 17:58:30 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ HumanA::HumanA( std::string new_name, Weapon &new_weapon_type ) : name(new_name)
 {
     //왜 초기화 리스트는 되고
     //생성자 내부에서 초기화하는건 안되는 걸까요?
+    //값을 대입하는거지 선언하는건 아니니까요.
 }
 
 void HumanA::attack()
