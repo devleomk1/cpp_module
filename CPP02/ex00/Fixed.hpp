@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:01:54 by jisokang          #+#    #+#             */
-/*   Updated: 2022/04/26 23:32:23 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/02 21:29:17 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@
 class Fixed
 {
 private:
-	/* data */
+	int fixed_num;
+	static const int num_bit = 8;
 public:
-	Fixed(/* args */);
-	~Fixed();
+	//Orthodox Canonical Form
+	Fixed();								//Default constructor
+	Fixed(const Fixed &src);				//Copy constructor
+	Fixed &operator=(const Fixed &src);		//Copy Asginment operator
+	~Fixed();								//Destructor
 };
 
 #endif

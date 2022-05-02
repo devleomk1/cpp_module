@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 23:42:29 by jisokang          #+#    #+#             */
-/*   Updated: 2022/04/18 18:33:01 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/02 19:34:49 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void Replace::start( const std::string text_file, const std::string s1, const st
 		file_out.close();
 	}
 	else
-		std::cout << YELLOW"Wrong Filename: "RESET"File [" << text_file << "] dose not exist\n";
+		std::cout << YELLOW "Wrong Filename: " RESET "File [" << text_file << "] dose not exist\n";
 }
 
 Replace::~Replace()
