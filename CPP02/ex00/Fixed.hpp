@@ -6,12 +6,15 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:01:54 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/02 21:29:17 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/03 22:32:52 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_CPP
 # define FIXED_CPP
+
+# include <iostream>
+# include "color.hpp"
 
 class Fixed
 {
@@ -21,9 +24,12 @@ private:
 public:
 	//Orthodox Canonical Form
 	Fixed();								//Default constructor
-	Fixed(const Fixed &src);				//Copy constructor
-	Fixed &operator=(const Fixed &src);		//Copy Asginment operator
+	Fixed(const Fixed &f);				//Copy constructor
+	Fixed &operator=(const Fixed &f);		//Copy Asginment operator
 	~Fixed();								//Destructor
+
+	int getRawBits( void ) const;
+	void setRawBits( int const raw );
 };
 
 #endif
