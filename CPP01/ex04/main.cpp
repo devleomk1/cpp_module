@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 03:29:47 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/02 19:35:27 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/05 22:31:23 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int main(int argc, char **argv)
 	}
 	Replace	replace;
 	replace.start(argv[1], argv[2], argv[3]);
-	//
 
 	return (EXIT_SUCCESS);
 }
