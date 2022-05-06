@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:44:49 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/18 21:22:12 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:48:25 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ PhoneBook::PhoneBook(void)
 	idx = 0;
 	cnt = 0;
 	std::cout << "=== PhoneBook 1980 ===\n";
-	std::cout << "Available Command is ["GREEN"ADD"RESET"], ["GREEN"SEARCH"RESET"], ["GREEN"EXIT"RESET"]\n";
+	std::cout << "Available Command is [" GREEN "ADD" RESET "], [" GREEN "SEARCH" RESET "], [" GREEN "EXIT" RESET "]\n";
 }
 
 PhoneBook::~PhoneBook(void)
@@ -65,14 +65,14 @@ void	PhoneBook::SearchContact(void)
 {
 	int	input_index = 0;
 
-	std::cout << GREEN"@index>"RESET;
+	std::cout << GREEN "@index>" RESET;
 	std::string str;
 	std::getline(std::cin, str);
 	input_index = atoi(str.c_str());
 	if (is_number(str) == true && input_index < cnt && input_index >= 0)
 		contact[input_index].PrintDetail();
 	else
-		std::cout << YELLOW"[Error]"RESET" Wrong Index!\n";
+		std::cout << YELLOW "[Error]" RESET " Wrong Index!\n";
 
 }
 
@@ -80,7 +80,7 @@ void	PhoneBook::SearchBook(void)
 {
 	if (cnt < 1)
 	{
-		std::cout << YELLOW"[Error]"RESET" PhoneBooks is empty!\n";
+		std::cout << YELLOW "[Error]" RESET " PhoneBooks is empty!\n";
 		return ;
 	}
 	PrintTable();

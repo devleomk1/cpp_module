@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:43:03 by jisokang          #+#    #+#             */
-/*   Updated: 2022/03/15 20:28:09 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:48:27 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(void)
 
 	while (true)
 	{
-		std::cout << GREEN"@>"RESET;
+		std::cout << GREEN "@>" RESET;
 		std::getline(std::cin, cmd);
 		if (cmd == "EXIT" || std::cin.eof())
 			return (EXIT_SUCCESS);
@@ -28,7 +28,7 @@ int	main(void)
 		else if (cmd == "SEARCH")
 			phonebook.SearchBook();
 		else
-			std::cout << YELLOW"[Error]"RESET" Wrong Command. Available Command is [ADD], [SEARCH], [EXIT]\n";
+			std::cout << YELLOW "[Error]" RESET " Wrong Command. Available Command is [ADD], [SEARCH], [EXIT]\n";
 	}
 	return (EXIT_SUCCESS);
 }
