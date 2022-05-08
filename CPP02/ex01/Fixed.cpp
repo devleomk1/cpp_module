@@ -6,16 +6,31 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:02:00 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/05 17:24:22 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/07 13:01:51 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <bitset>
 
-// A default constructor that initializes the fixed-point number value to 0.
-Fixed::Fixed( void ) : fixed_num( 0 )		//생성자에서 fixed_num을 0으로 초기화
+// Default Constructor
+Fixed::Fixed( void ) : fp_value( 0 )
 {
 	std::cout << GREEN "Default constructor" RESET " called\n";
+}
+
+// Int constructor
+Fixed::Fixed( const int num ) : fp_value( num << frac_bits )
+{
+	std::cout << GREEN "Int constructor" RESET " called\n";
+}
+
+// Float constructor
+// Fixed::Fixed( const float num ) : fp_value( (int)(roundf(num * (1 << frac_bits))) )	이게 더 정확함
+Fixed::Fixed( const float num ) : fp_value( (int)(num * (1 << frac_bits)) )
+{
+	std::cout << GREEN "Int constructor" RESET " called\n";
+	std::cout << std::bitset<32>(fp_value) <<std::endl;
 }
 
 // Copy constructor
@@ -23,12 +38,7 @@ Fixed::Fixed(const Fixed &f)
 {
 	//deep copy
 	std::cout << YELLOW "Copy" RESET " constructor called\n";
-
-	// this->fixed_num = f.getRawBits();
-	// 이건 왜 안될까? 이게 깊은 복사 아닌가?
-
 	*this = f;
-	// 이건 됨, 이건 f가 없어지면 날라가는거 아닌가?
 }
 
 Fixed &Fixed::operator=(const Fixed &f)
@@ -38,8 +48,14 @@ Fixed &Fixed::operator=(const Fixed &f)
 	std::cout << YELLOW "Copy" RESET " assignment operator called\n";
 	// ?????
 	// if(this != &f)
-	fixed_num = f.getRawBits();
+	fp_value = f.getRawBits();
 	return (*this);
+}
+
+std::ostream &operator<<(std::ostream &stream, const Fixed &f)
+{
+	stream << f.toFloat();
+	return (stream);
 }
 
 Fixed::~Fixed()
@@ -50,10 +66,20 @@ Fixed::~Fixed()
 int Fixed::getRawBits( void ) const
 {
 	std::cout << BLUE "getRawBits" RESET " member function called\n";
-	return (this->fixed_num);
+	return (this->fp_value);
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	this->fixed_num = raw;
+	this->fp_value = raw;
+}
+
+int Fixed::toInt ( void ) const
+{
+	return (this->fp_value >> this->frac_bits);
+}
+
+float Fixed::toFloat ( void ) const
+{
+	return ((float)this->fp_value / (1 << frac_bits));
 }

@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:01:54 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/03 22:32:52 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/06 17:53:31 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 class Fixed
 {
 private:
-	int fixed_num;
-	static const int num_bit = 8;
+	int fp_value;
+	static const int frac_bits = 8;
 public:
 	//Orthodox Canonical Form
 	Fixed();								//Default constructor
-	Fixed(const Fixed &f);				//Copy constructor
+	Fixed(const Fixed &f);					//Copy constructor
 	Fixed &operator=(const Fixed &f);		//Copy Asginment operator
 	~Fixed();								//Destructor
 
