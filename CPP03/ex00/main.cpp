@@ -6,7 +6,15 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:30 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/09 19:07:30 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/09 20:55:00 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
+
+int	main( void )
+{
+	ClapTrap( "CL4P-TP" );
+	
+	return 0;
+}
