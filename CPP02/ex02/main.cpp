@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:02:03 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/08 20:12:20 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/09 19:02:23 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 int	main( void )
 {
-	Fixed a;
+	Fixed a (1);
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	
+	std::cout << "max : " << Fixed::max( a, b ) << std::endl;
+	std::cout << "min : " << Fixed::min( a, b ) << std::endl;
 
 	std::cout << a << std::endl;		//  0
 	std::cout << ++a << std::endl;		//  0.00390625
@@ -24,7 +27,6 @@ int	main( void )
 	std::cout << a << std::endl;		//  0.0078125
 	std::cout << b << std::endl;		// 10.1016
 
-	std::cout << Fixed::min( a, b ) << std::endl;
 
 	return 0;
 }

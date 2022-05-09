@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:01:54 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/09 15:44:47 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:58:22 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,11 @@ public:
 	Fixed &operator--();					// Prefix decrement operator.
 	Fixed operator--(int);					// Postfix decrement operator.
 
-	const Fixed &min( const Fixed &a, const Fixed &b );
-	 Fixed &min(  Fixed &a,  Fixed &b );
-	Fixed max();
+	//ㅇㅣ거 왜  스스테테틱틱?
+	static const Fixed &min( const Fixed &a, const Fixed &b );
+	static Fixed &min( Fixed &a, Fixed &b );
+	static const Fixed &max( const Fixed &a, const Fixed &b );
+	static Fixed &max( Fixed &a, Fixed &b );
 
 
 	~Fixed();								// Destructor

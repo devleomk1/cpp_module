@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:02:00 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/09 15:44:49 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/09 19:00:12 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,8 +125,7 @@ Fixed Fixed::operator++(int)
 	return (temp);
 }
 
-// ????????
-const Fixed &Fixed::min( const Fixed &a, const Fixed &b)
+const Fixed &Fixed::min( const Fixed &a, const Fixed &b )
 {
 	if (a.toFloat() > b.toFloat())
 		return (b);
@@ -136,6 +135,20 @@ const Fixed &Fixed::min( const Fixed &a, const Fixed &b)
 Fixed &Fixed::min( Fixed &a, Fixed &b)
 {
 	if (a.toFloat() > b.toFloat())
+		return (b);
+	return (a);
+}
+
+const Fixed &Fixed::max( const Fixed &a, const Fixed &b)
+{
+	if (a.toFloat() < b.toFloat())
+		return (b);
+	return (a);
+}
+
+Fixed &Fixed::max( Fixed &a, Fixed &b)
+{
+	if (a.toFloat() < b.toFloat())
 		return (b);
 	return (a);
 }
