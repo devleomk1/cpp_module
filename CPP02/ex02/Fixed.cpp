@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:02:00 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/08 20:27:20 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/09 15:44:49 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,14 @@ Fixed Fixed::operator++(int)
 }
 
 // ????????
-Fixed *Fixed::min( const Fixed &a, const Fixed &b)
+const Fixed &Fixed::min( const Fixed &a, const Fixed &b)
+{
+	if (a.toFloat() > b.toFloat())
+		return (b);
+	return (a);
+}
+
+Fixed &Fixed::min( Fixed &a, Fixed &b)
 {
 	if (a.toFloat() > b.toFloat())
 		return (b);

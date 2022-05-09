@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:01:54 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/08 20:27:06 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/09 15:44:47 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	Fixed( const float num );				//Float constructor
 	Fixed( const Fixed &f );				//Copy constructor
 	Fixed &operator=(const Fixed &f);		//Copy Asginment operator
-	
+
 	//왜 '&'안붙임가 어디에 붙고 안붙고가 잘 이해가 안된다! 평가 받기전에 꼭 이해하기!
 	bool operator>(const Fixed &f);
 	bool operator<(const Fixed &f);
@@ -47,7 +47,8 @@ public:
 	Fixed &operator--();					// Prefix decrement operator.
 	Fixed operator--(int);					// Postfix decrement operator.
 
-	Fixed *min( const Fixed &a, const Fixed &b );
+	const Fixed &min( const Fixed &a, const Fixed &b );
+	 Fixed &min(  Fixed &a,  Fixed &b );
 	Fixed max();
 
 
