@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 00:33:41 by jisokang          #+#    #+#             */
-/*   Updated: 2022/04/22 23:19:47 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/13 02:25:14 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,30 @@ void Harl::info( void )
 void Harl::warning( void )
 {
 	std::cout
-		<< YELLOW"[WARNING]:" RESET;
+		<< YELLOW"[WARNING]:" RESET
+		<<" I think I deserve to have some extra bacon for free."
+		<<" I’ve been coming for years whereas you started working here since last month.\n";
 
 }
 
 void Harl::error( void )
 {
 	std::cout
-		<< YELLOW"[ERROR]: " RESET;
+		<< YELLOW"[ERROR]: " RESET
+		<< "This is unacceptable! I want to speak to the manager now.\n";
 
 }
 
 void Harl::complain( std::string level )
 {
-	void (Harl::*f[4])(void) = { &Harl::debug };
+	void		(Harl::*f[4])(void) = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
+	std::string	box[4] = { "debug", "info", "warning", "error" };
 
-	(this->*(f[0]))();
+	for (int i = 0; i < 4; i++)
+	{
+		if(level == box[i])
+			(this->*(f[i]))();
+	}
 }
 
 Harl::~Harl()
