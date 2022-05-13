@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:27 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/09 21:04:42 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/12 22:08:25 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@
 class ClapTrap
 {
 private:
-    std::string		_name;
+	std::string		_name;
 	unsigned int	_hp;		//Hit point
 	unsigned int	_ep;		//Energy point
 	unsigned int	_ad;		//Attaack damage
-	
+
 public:
-    ClapTrap( void );							//Default constructor
-    ClapTrap( std::string name );				//Name constructor
+	ClapTrap( void );							//Default constructor
+	ClapTrap( std::string name );				//Name constructor
 	ClapTrap( const ClapTrap &f );				//Copy constructor
 	ClapTrap &operator=(const ClapTrap &f);		//Copy Asginment operator
 	~ClapTrap();								//Destructor
