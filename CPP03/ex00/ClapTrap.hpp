@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:27 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 19:12:20 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/14 20:09:41 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define DEFUALT_HP		10
 # define DEFUALT_EP		10
 # define DEFUALT_AD		0
+# define MAX_HP			1000
 
 class ClapTrap
 {

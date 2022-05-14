@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:30 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 19:18:22 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/14 20:14:56 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,19 @@ int	main( void )
 	c.printStatus();
 
 	c.setAd( 3 );
-
+	c.attack( "Psycho" );
 	c.printStatus();
-	c.takeDamage( 5 );
+	
+	c.takeDamage( 4294967295 );
 	c.printStatus();
-	c.takeDamage( 5 );
-	c.takeDamage( 5 );
 
+	c.beRepaired( 4294967295 );
+	c.printStatus();
+
+	c.takeDamage( 10 );
+	c.printStatus();
+	
+	c.takeDamage( 5 );
 
 	return 0;
 }

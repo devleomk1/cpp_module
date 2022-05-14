@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:24 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 19:29:01 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/14 20:14:21 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,17 @@ ClapTrap::~ClapTrap()
 	std::cout
 		<< "AAAAAAAAAnd Gooooodbye!\t\t [" RED "Destructor" RESET "]"
 		<< std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &f)
+{
+	std::cout << YELLOW "Copy" RESET " assignment operator called" << std::endl;
+	_name = f._name;
+	_hp = f._hp;
+	_ep = f._ep;
+	_ad = f._ad;
+
+	return (*this);
 }
 
 void ClapTrap::attack( const std::string &target )
@@ -74,8 +85,11 @@ void ClapTrap::takeDamage( unsigned int amount )
 		return ;
 	}
 
-
-	_hp -= amount;
+	if (_hp <= amount)
+		_hp = 0;
+	else
+		_hp -= amount;
+	
 	std::cout
 		<< "ClapTrap " MAGENTA
 		<< _name << RESET " take damage!! \t[" RED "HP -" << amount << RESET "]"
@@ -86,23 +100,31 @@ void ClapTrap::beRepaired( unsigned int amount )
 {
 	if (_hp == 0)
 	{
-		std::cout << "ClapTrap " << _name << " doesn't have HP to fight." << std::endl;
+		std::cout
+			<< "ClapTrap " MAGENTA
+			<< _name << RESET " doesn't have HP to fight."
+			<< std::endl;
 		return ;
 	}
 
 	if (_ep == 0)
 	{
 		std::cout
-			<< "ClapTrap "  MAGENTA 
+			<< "ClapTrap " MAGENTA 
 			<< _name << RESET " not enough EP!"
 			<< std::endl;
 		return ;
 	}
 	
-	_hp += amount;
+	if (_hp + amount >= MAX_HP || amount == __UINT32_MAX__)
+		_hp = MAX_HP;
+	else
+		_hp += amount;
+
 	std::cout 
-		<< "ClapTrap " << _name 
-		<< "repaire him self! " << amount << " damage!!" << std::endl;
+		<< "ClapTrap " MAGENTA
+		<< _name << RESET 
+		<< " repaired!\t[" GREEN "HP +"<< amount << RESET "]" << std::endl;
 }
 
 void ClapTrap::setAd( unsigned int amount )
