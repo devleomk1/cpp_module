@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:24 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 20:14:21 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/14 20:59:05 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap( void )
 		<< std::endl;
 }
 
-ClapTrap::ClapTrap( std::string name) : _name(name), _hp(DEFUALT_HP), _ep(DEFUALT_EP), _ad(DEFUALT_AD)
+ClapTrap::ClapTrap( std::string name) : _name(name), _hp(CLAP_HP), _ep(CLAP_EP), _ad(CLAP_AD)
 {
 	std::cout
 		<< "AAAAAAAAAnd Helloooooo!\t\t [" GREEN "Constructor" RESET "]"
@@ -116,8 +116,8 @@ void ClapTrap::beRepaired( unsigned int amount )
 		return ;
 	}
 	
-	if (_hp + amount >= MAX_HP || amount == __UINT32_MAX__)
-		_hp = MAX_HP;
+	if (_hp + amount >= CLAP_MAX_HP || amount == __UINT32_MAX__)
+		_hp = CLAP_MAX_HP;
 	else
 		_hp += amount;
 
@@ -135,9 +135,8 @@ void ClapTrap::setAd( unsigned int amount )
 
 void ClapTrap::printStatus ( void )
 {
-	std::cout << "┌─────────────────────┐\n";
-	std::cout << "│" << std::setw(10) << MAGENTA << _name << RESET "'s STATUS│\n";
-	std::cout << "├──────────┬──────────┤\n";
+	std::cout << MAGENTA << _name << RESET "'s STATUS\n";
+	std::cout << "┌──────────┬──────────┐\n";
 	std::cout << "│" << std::setw(10) << "HP" << "│" << std::setw(10) << _hp << "│\n";
 	std::cout << "│" << std::setw(10) << "EP" << "│" << std::setw(10) << _ep << "│\n";
 	std::cout << "│" << std::setw(10) << "AD" << "│" << std::setw(10) << _ad << "│\n";
