@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:24 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 22:32:50 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/14 23:23:41 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 ClapTrap::ClapTrap( void ) : _name(CLAP_DF_NAME), _hp(CLAP_HP), _ep(CLAP_EP), _ad(CLAP_AD)
 {
 	std::cout
-		<< "AAAAAAAAAnd Helloooooo!\t\t [" GREEN "Constructor" RESET "]"
+		<< "[ClapTrap]: AAAAAAAAAnd Helloooooo!\t\t [" GREEN "Constructor" RESET "]"
 		<< std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name) : _name(name), _hp(CLAP_HP), _ep(CLAP_EP), _ad(CLAP_AD)
 {
 	std::cout
-		<< "AAAAAAAAAnd Helloooooo!\t\t [" GREEN "Constructor" RESET "]"
+		<< "[ClapTrap]: AAAAAAAAAnd Helloooooo!\t\t [" GREEN "Constructor" RESET "]"
 		<< std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
 	std::cout
-		<< "AAAAAAAAAnd Gooooodbye!\t\t [" RED "Destructor" RESET "]"
+		<< "[ClapTrap]: AAAAAAAAAnd Gooooodbye!\t\t [" RED "Destructor" RESET "]"
 		<< std::endl;
 }
 

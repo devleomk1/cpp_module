@@ -6,7 +6,7 @@
 #    By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 19:07:33 by jisokang          #+#    #+#              #
-#    Updated: 2022/05/14 21:12:26 by jisokang         ###   ########.fr        #
+#    Updated: 2022/05/15 00:10:30 by jisokang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ RM		= rm -rf
 
 SRCS	=	main.cpp\
 			ClapTrap.cpp\
-			ScavTrap.cpp
+			ScavTrap.cpp\
+			FragTrap.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 %.o : %.cpp
