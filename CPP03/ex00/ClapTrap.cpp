@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:24 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/12 22:20:54 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/13 21:26:25 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ void ClapTrap::attack( const std::string &target )
 		return ;
 	}
 
-	if (_ep < 0)
+	if (_ep < 1)
 	{
 		std::cout << "ClapTrap " << _name << " not enough EP!\n";
 		return ;
 	}
+	std::cout << "ClapTrap " << _name << "attacks" << target << ", causing " << _ad << "points of damage!" << std::endl;
 
 }
 
