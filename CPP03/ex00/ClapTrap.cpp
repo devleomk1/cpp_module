@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:24 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 20:59:05 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/14 22:29:21 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,19 @@ ClapTrap::~ClapTrap()
 		<< std::endl;
 }
 
-ClapTrap &ClapTrap::operator=(const ClapTrap &f)
+ClapTrap::ClapTrap( const ClapTrap &src )
+{
+	std::cout << YELLOW "Copy" RESET " constructor called" << std::endl;
+	*this = src;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
 	std::cout << YELLOW "Copy" RESET " assignment operator called" << std::endl;
-	_name = f._name;
-	_hp = f._hp;
-	_ep = f._ep;
-	_ad = f._ad;
+	_name = src._name;
+	_hp = src._hp;
+	_ep = src._ep;
+	_ad = src._ad;
 
 	return (*this);
 }

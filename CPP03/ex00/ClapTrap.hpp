@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:27 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 20:28:31 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/14 22:25:53 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ private:
 public:
 	ClapTrap( void );								//Default constructor
 	ClapTrap( std::string name );					//Name constructor
-	ClapTrap( const ClapTrap &f );					//Copy constructor
-	ClapTrap &operator=( const ClapTrap &f );		//Copy Asginment operator
+	ClapTrap( const ClapTrap &src );				//Copy constructor
+	ClapTrap &operator=( const ClapTrap &src );		//Copy Asginment operator
 	~ClapTrap();									//Destructor
 
 	//Add the following public member functions so the ClapTrap looks more realistic:
