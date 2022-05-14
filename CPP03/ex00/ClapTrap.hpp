@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:27 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 18:04:57 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:12:20 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class ClapTrap
 {
 private:
 	std::string		_name;
-	unsigned int	_hp;		//Hit point
-	unsigned int	_ep;		//Energy point
-	unsigned int	_ad;		//Attaack damage
+	unsigned int	_hp;							//Hit point
+	unsigned int	_ep;							//Energy point
+	unsigned int	_ad;							//Attaack damage
 
 public:
 	ClapTrap( void );								//Default constructor
