@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   color.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 19:07:30 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 18:22:29 by jisokang         ###   ########.fr       */
+/*   Created: 2022/01/20 00:59:06 by jisokang          #+#    #+#             */
+/*   Updated: 2022/03/11 14:12:41 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef COLOR_HPP
+# define COLOR_HPP
 
-int	main( void )
-{
-	ClapTrap c( "CL4P-TP" );
+# define RED		"\x1b[31m"
+# define GREEN		"\x1b[32m"
+# define BLUE		"\x1b[34m"
+# define YELLOW		"\x1b[33m"
+# define MAGENTA	"\x1b[35m"
+# define CYAN		"\x1b[36m"
 
-	c.printStatus();
-	c.attack( "Psycho" );
-	c.takeDamage( 5 );
-	c.takeDamage( 5 );
-	c.takeDamage( 5 );
+# define RESET		"\x1b[0m"
 
-
-	return 0;
-}
+#endif

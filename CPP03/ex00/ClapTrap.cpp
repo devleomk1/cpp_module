@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:24 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/13 21:26:25 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/14 18:20:28 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,68 @@
 
 ClapTrap::ClapTrap( void )
 {
-	std::cout << "AAAAAAAAAnd Coooooonstructor!" << std::endl;
+	std::cout << "AAAAAAAAAnd Helloooooo!\t\t [" GREEN "Constructor" RESET "]" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name) : _name(name), _hp(DEFUALT_HP), _ep(DEFUALT_EP), _ad(DEFUALT_AD)
 {
-	std::cout << "AAAAAAAAAnd Coooooonstructor!" << std::endl;
+	std::cout << "AAAAAAAAAnd Helloooooo!\t\t [" GREEN "Constructor" RESET "]" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "AAAAAAAAAnd Gooooooodbye!" << std::endl;
+	std::cout << "AAAAAAAAAnd Gooooodbye!\t\t [" RED "Destructor" RESET "]" << std::endl;
 }
 
 void ClapTrap::attack( const std::string &target )
 {
-	if (_hp < 1)
+	if (_hp == 0)
 	{
-		std::cout << _name << " doesn't have HP to fight." << std::endl;
+		std::cout << "ClapTrap " MAGENTA << _name << RESET " doesn't have HP to fight." << std::endl;
 		return ;
 	}
 
-	if (_ep < 1)
+	if (_ep == 0)
 	{
-		std::cout << "ClapTrap " << _name << " not enough EP!\n";
+		std::cout << "ClapTrap "  MAGENTA << _name << RESET " not enough EP!\n";
 		return ;
 	}
-	std::cout << "ClapTrap " << _name << "attacks" << target << ", causing " << _ad << "points of damage!" << std::endl;
+	
+	std::cout << "ClapTrap " MAGENTA << _name << RESET " attacks " << target << ", causing " << _ad << " points of damage!" << std::endl;
 
 }
 
 void ClapTrap::takeDamage( unsigned int amount )
 {
-	std::cout << "ClapTrap " << this->_name << " No EP!\n";
+	if (_hp == 0)
+	{
+		std::cout << "ClapTrap " MAGENTA << _name << RESET " already " RED "HP 0" RESET << std::endl;
+		return ;
+	}
+
+	_hp -= amount;
+	std::cout << "ClapTrap " MAGENTA << _name << RESET " take damage!! \n" RED "HP -" << amount << RESET << std::endl;
 }
 
 void ClapTrap::beRepaired( unsigned int amount )
 {
-	std::cout << "ClapTrap " << this->_name << " No EP!\n";
+	if (_hp < 1)
+	{
+		std::cout << "ClapTrap " << _name << " doesn't have HP to fight." << std::endl;
+		return ;
+	}
+
+	_hp += amount;
+	std::cout << "ClapTrap " << _name << "repaire him self! " << amount << " damage!!" << std::endl;
+}
+
+void ClapTrap::printStatus ( void )
+{
+	std::cout << "┌─────────────────────┐\n";
+	std::cout << "│" << std::setw(10) << MAGENTA << _name << RESET "'s STATUS│\n";
+	std::cout << "├──────────┬──────────┤\n";
+	std::cout << "│" << std::setw(10) << "HP" << "│" << std::setw(10) << _hp << "│\n";
+	std::cout << "│" << std::setw(10) << "EP" << "│" << std::setw(10) << _ep << "│\n";
+	std::cout << "│" << std::setw(10) << "AD" << "│" << std::setw(10) << _ad << "│\n";
+	std::cout << "└──────────┴──────────┘\n";
 }
