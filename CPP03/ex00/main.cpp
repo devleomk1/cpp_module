@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:30 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 20:57:41 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/14 22:34:45 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,15 @@
 
 int	main( void )
 {
-	ClapTrap c( "CL4P-TP1" );
+	ClapTrap a;
+	a.printStatus();
 
+	ClapTrap c( "CL4P-TP1" );
 	c.printStatus();
+
+	ClapTrap d( c );
+	d.printStatus();
+
 	
 	c.attack( "Psycho" );
 	c.printStatus();

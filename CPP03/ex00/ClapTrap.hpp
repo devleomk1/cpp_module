@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:27 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 22:25:53 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/14 22:33:50 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 # include <iomanip>      // std::setw
 # include "color.hpp"
 
+# define CLAP_DF_NAME	"NONAME"
 # define CLAP_HP		10
 # define CLAP_EP		10
 # define CLAP_AD		0
-# define CLAP_MAX_HP			1000
+# define CLAP_MAX_HP	1000
 
 class ClapTrap
 {

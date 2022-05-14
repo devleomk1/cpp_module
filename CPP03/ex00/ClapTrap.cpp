@@ -6,13 +6,13 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:24 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 22:29:21 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/14 22:32:50 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap( void )
+ClapTrap::ClapTrap( void ) : _name(CLAP_DF_NAME), _hp(CLAP_HP), _ep(CLAP_EP), _ad(CLAP_AD)
 {
 	std::cout
 		<< "AAAAAAAAAnd Helloooooo!\t\t [" GREEN "Constructor" RESET "]"
