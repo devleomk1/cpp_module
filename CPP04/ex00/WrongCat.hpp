@@ -6,11 +6,14 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 04:09:43 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/15 04:13:33 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:36:55 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#ifndef WRONGACAT_HPP
+# define WRONGACAT_HPP
+
+# include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal
 {
@@ -26,3 +29,5 @@ public:
 
     void makeSound() const;
 };
+
+#endif

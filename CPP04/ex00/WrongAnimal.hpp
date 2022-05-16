@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 04:06:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/15 04:06:32 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:36:41 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ public:
     // virtual void makeSound( void );          가상 함수
     // virtual void makeSound( void ) = 0;      순수 가상 함수
 };
-
 
 #endif

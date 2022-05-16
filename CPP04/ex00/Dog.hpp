@@ -6,11 +6,14 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 03:58:40 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/15 04:00:12 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:35:52 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
+
+# include "Animal.hpp"
 
 class Dog : public Animal
 {
@@ -27,3 +30,5 @@ public:
 
     void makeSound() const;
 };
+
+#endif
