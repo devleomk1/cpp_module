@@ -6,7 +6,7 @@
 #    By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/15 02:56:44 by jisokang          #+#    #+#              #
-#    Updated: 2022/05/15 04:01:43 by jisokang         ###   ########.fr        #
+#    Updated: 2022/05/16 14:06:06 by jisokang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ RM		= rm -rf
 SRCS	=	main.cpp\
 			Animal.cpp\
 			Cat.cpp\
-			Dog.cpp
+			Dog.cpp\
+			WrongAnimal.cpp\
+			WrongCat.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 %.o : %.cpp

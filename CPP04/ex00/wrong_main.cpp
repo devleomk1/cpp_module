@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 04:15:03 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/15 04:24:40 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:04:04 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int main(void)
     WrongAnimal *meta = new WrongAnimal();
     WrongAnimal *i = new WrongCat();
 
-    std::cout << "meta->getType(): " << meta->getType() << std::endl;
-    std::cout << "i->getType(): " << i->getType() << std::endl;
+    std::cout << "[meta->getType()]: " << meta->getType() << std::endl;
+    std::cout << "[i->getType()]: " << i->getType() << std::endl;
 
     meta->makeSound();
     i->makeSound();

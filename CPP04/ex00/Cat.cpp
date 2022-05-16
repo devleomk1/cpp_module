@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:42:42 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/15 03:57:11 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:17:56 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat ( void )
 {
-    type = "cat";
+    type = "Cat";
     std::cout
 		<< "[Cat]: \t\t[" GREEN "Constructor" RESET "]"
 		<< std::endl;
