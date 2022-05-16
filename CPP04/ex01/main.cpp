@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:20:01 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/16 15:09:06 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:55:42 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,35 +17,35 @@
 #include "Dog.hpp"
 
 // Polymorphism = 다향성
+
+#define META_SIZE   10
+
 int main() 
 {
     std::cout << "\n===============================================" << std::endl;
     std::cout << "===================  " GREEN "O K" RESET "  =====================" << std::endl;
     std::cout << "===============================================\n" << std::endl;
 
-    const Animal* meta = new Animal();
-    const Animal* i = new Cat();
-    const Animal* j = new Dog();
+    const Animal* meta[META_SIZE];
 
-    std::cout << "\n";
-    std::cout << "i->" YELLOW "getType" RESET "(): "<< i->getType() << " " << std::endl;
-    std::cout << "j->" YELLOW "getType" RESET "(): " << j->getType() << " " << std::endl;
+    for (size_t i = 0; i < META_SIZE; i++)
+    {
+        // 짝수
+        if (i % 2 == 0)
+            meta[i] = new Dog();
+        // 홀수
+        else
+            meta[i] = new Cat();        
+    }
+
+    for (size_t i = 0; i < META_SIZE; i++)
+    {
+        std::cout << "meta["<< i <<"]: " << meta[i]->getType() <<" think" << meta[i]->getIdea() << std::endl;
+    }
     
-    std::cout << "\n";
-    std::cout << "i->" YELLOW "makeSound" RESET "(): ";
-    i->makeSound();     //will output the Cat sound!
-    std::cout << "j->" YELLOW "makeSound" RESET "(): ";
-    j->makeSound();     //will output the Dog sound!
-    std::cout << "meta->" YELLOW "makeSound" RESET "(): ";
-    meta->makeSound();  //will output the Animal sound!
 
-    std::cout << "\n";
-    std::cout << "delete meta: " << std::endl;
-    delete meta;
-    std::cout << "delete i: " << std::endl;
-    delete i;
-    std::cout << "delete j: " << std::endl;
-    delete j;
+    for (size_t i = 0; i < META_SIZE; i++)
+        delete meta[i];
 
     std::cout << "\n===============================================" << std::endl;
     std::cout << "=================== " RED "WRONG" RESET " =====================" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:54:34 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/16 15:34:42 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:40:18 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 class Cat : public Animal
 {
 private:
-    char * neck;
-    /* data */
 protected:
 public:
     Cat( void );

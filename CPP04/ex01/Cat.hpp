@@ -6,17 +6,20 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:54:34 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/16 15:34:44 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:57:23 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
+
+# include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal
 {
 private:
-    char * neck;
-    /* data */
+    Brain *brain;
 protected:
 public:
     Cat( void );
@@ -27,3 +30,5 @@ public:
 
     virtual void makeSound() const;
 };
+
+#endif

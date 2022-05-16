@@ -17,12 +17,21 @@ Brain::Brain ( void )
     std::cout
 		<< "[" GREEN "Constructor" RESET " (Brain)]"
 		<< std::endl;
+	SetBrain("Think");
+}
+
+Brain::Brain ( const std::string think )
+{
+    std::cout
+		<< "[" GREEN "Constructor" RESET " (Brain)]"
+		<< std::endl;
+	SetBrain(think);
 }
 
 Brain &Brain::operator=( const Brain &src )
 {
 	std::cout << YELLOW "Copy" RESET " assignment operator called" << std::endl;
-	for (size_t i = 0; i < 100; i++)
+	for (size_t i = 0; i < IDEA_SIZE; i++)
 	{
 		ideas[i] = src.ideas[i];
 	}
@@ -40,4 +49,22 @@ Brain::~Brain()
 	std::cout
 		<< "[" RED "Destructor" RESET " (Brain)]"
 		<< std::endl;
+}
+
+void Brain::SetIdea( const size_t i, const std::string str )
+{
+	ideas[i] = str;
+}
+
+void Brain::SetBrain( const std::string str )
+{
+	for (size_t i = 0; i < IDEA_SIZE; i++)
+	{
+		SetIdea(i, str);
+	}
+}
+
+std::string Brain::getIdea( void ) const
+{
+	return (this->ideas[0]);
 }
