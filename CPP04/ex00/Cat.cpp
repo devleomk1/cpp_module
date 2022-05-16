@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:42:42 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/16 14:17:56 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:33:31 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ Cat::~Cat()
 
 void Cat::makeSound( void ) const
 {
-	std::cout << "[Cat]: SAY 야옹야옹!" << std::endl;
+	std::cout << "[Cat]: 🐈 야옹야옹!" << std::endl;
 }

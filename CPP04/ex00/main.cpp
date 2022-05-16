@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:20:01 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/16 14:19:22 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:38:08 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,18 @@
 // Polymorphism = 다향성
 int main() 
 {
+    std::cout << "\n===============================================" << std::endl;
+    std::cout << "===================  " GREEN "O K" RESET "  =====================" << std::endl;
+    std::cout << "===============================================\n" << std::endl;
+
     const Animal* meta = new Animal();
     const Animal* i = new Cat();
     const Animal* j = new Dog();
 
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << "type of i is "<< i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound! j->makeSound();
+    std::cout << "[j->" YELLOW "getType" RESET "()]: " << j->getType() << " " << std::endl;
+    std::cout << "[i->" YELLOW "getType" RESET "()]: "<< i->getType() << " " << std::endl;
+    i->makeSound(); //will output the cat sound!
+    j->makeSound();
     meta->makeSound(); 
 
     delete meta;

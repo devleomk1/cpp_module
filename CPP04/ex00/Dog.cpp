@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 03:58:37 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/15 04:00:55 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:34:35 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ Dog::~Dog()
 
 void Dog::makeSound( void ) const
 {
-	std::cout << "[Dog]: SAY 왈왈왈왈!" << std::endl;
+	std::cout << "[Dog]: 🐕 왈왈왈왈!" << std::endl;
 }
