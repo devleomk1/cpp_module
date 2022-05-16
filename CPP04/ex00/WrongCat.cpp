@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 04:19:58 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/15 04:20:16 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:04:04 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 WrongCat::WrongCat ( void )
 {
-    type = "Wrongcat";
+    type = "WrongCat";
     std::cout
-		<< "[WrongCat]: \t\t[" GREEN "Constructor" RESET "]"
+		<< "[" GREEN "Constructor" RESET " (WrongCat)]"
 		<< std::endl;
 }
 
@@ -37,11 +37,11 @@ WrongCat::WrongCat( const WrongCat &src )
 WrongCat::~WrongCat()
 {
 	std::cout
-		<< "[WrongCat]: \t\t[" RED "Destructor" RESET "]"
+		<< "[" RED "Destructor" RESET " (WrongCat)]"
 		<< std::endl;
 }
 
 void WrongCat::makeSound( void ) const
 {
-	std::cout << "[WrongCat]: SAY 야옹야옹!" << std::endl;
+	std::cout << "[WrongCat]: 🐈 야옹야옹!" << std::endl;
 }

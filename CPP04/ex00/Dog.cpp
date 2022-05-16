@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 03:58:37 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/16 14:34:35 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:57:15 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Dog::Dog ( void )
 {
     type = "Dog";
     std::cout
-		<< "[Dog]: \t\t[" GREEN "Constructor" RESET "]"
+		<< "[" GREEN "Constructor" RESET " (Dog)]"
 		<< std::endl;
 }
 
@@ -37,7 +37,7 @@ Dog::Dog( const Dog &src )
 Dog::~Dog()
 {
 	std::cout
-		<< "[Dog]: \t\t[" RED "Destructor" RESET "]"
+		<< "[" RED "Destructor" RESET " (Dog)]"
 		<< std::endl;
 }
 

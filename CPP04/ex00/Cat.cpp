@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:42:42 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/16 14:33:31 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:57:01 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Cat::Cat ( void )
 {
     type = "Cat";
     std::cout
-		<< "[Cat]: \t\t[" GREEN "Constructor" RESET "]"
+		<< "[" GREEN "Constructor" RESET " (Cat)]"
 		<< std::endl;
 }
 
@@ -37,7 +37,7 @@ Cat::Cat( const Cat &src )
 Cat::~Cat()
 {
 	std::cout
-		<< "[Cat]: \t\t[" RED "Destructor" RESET "]"
+		<< "[" RED "Destructor" RESET " (Cat)]"
 		<< std::endl;
 }
 

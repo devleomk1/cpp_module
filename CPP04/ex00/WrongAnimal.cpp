@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 04:04:57 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/15 04:16:48 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:08:30 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 WrongAnimal::WrongAnimal ( void ) : type("WrongAnimal")
 {
     std::cout
-		<< "[WrongAnimail]: \t[" GREEN "Constructor" RESET "]"
+		<< "[" GREEN "Constructor" RESET " (WrongAnimal)]"
 		<< std::endl;
 }
 
@@ -36,7 +36,7 @@ WrongAnimal::WrongAnimal( const WrongAnimal &src )
 WrongAnimal::~WrongAnimal()
 {
 	std::cout
-		<< "[WrongAnimal]: \t[" RED "Destructor" RESET "]"
+		<< "[" RED "Destructor" RESET " (WrongAnimal)]"
 		<< std::endl;
 }
 
@@ -47,5 +47,5 @@ std::string WrongAnimal::getType() const
 
 void WrongAnimal::makeSound( void ) const
 {
-	std::cout << "[WrongAnimal]: SAY WrongANIMAL SOUND!" << std::endl;
+	std::cout << "[WrongAnimal]: WRONG ANIMAL SOUND!" << std::endl;
 }
