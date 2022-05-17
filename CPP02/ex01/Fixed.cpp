@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:02:00 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/08 15:57:13 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/17 14:15:28 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ Fixed &Fixed::operator=(const Fixed &f)
 	//'='를 내 마음대로 다시 정의 하는 작업
 	//'+', '-', '<' 등 다양한 오퍼레이터를 정의 할 수 있다.
 	std::cout << YELLOW "Copy" RESET " assignment operator called\n";
-	// ?????
-	// if(this != &f)
 	fp_value = f.getRawBits();
 	return (*this);
 }

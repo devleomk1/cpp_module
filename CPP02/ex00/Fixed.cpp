@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:02:00 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/06 17:50:28 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/17 14:16:09 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ Fixed::Fixed(const Fixed &f)
 	//deep copy
 	std::cout << YELLOW "Copy" RESET " constructor called\n";
 
-	// this->fp_value = f.getRawBits();
-	// 이건 왜 안될까? 이게 깊은 복사 아닌가?
-
 	*this = f;
-	// 이건 됨, 이건 f가 없어지면 날라가는거 아닌가?
 }
 
 Fixed &Fixed::operator=(const Fixed &f)
@@ -36,8 +32,6 @@ Fixed &Fixed::operator=(const Fixed &f)
 	//'='를 내 마음대로 다시 정의 하는 작업
 	//'+', '-', '<' 등 다양한 오퍼레이터를 정의 할 수 있다.
 	std::cout << YELLOW "Copy" RESET " assignment operator called\n";
-	// ?????
-	// if(this != &f)
 	fp_value = f.getRawBits();
 	return (*this);
 }
