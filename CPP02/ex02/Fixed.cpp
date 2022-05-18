@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:02:00 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/17 14:15:46 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/18 13:43:37 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,16 +110,29 @@ bool Fixed::operator!=(const Fixed &f)
 }
 
 // pre-increment and post-increment, pre-decrement and post-decrement
-Fixed &Fixed::operator++()
+Fixed &Fixed::operator++()		 // Prefix increment operator.
 {
 	(this->fp_value)++;
 	return (*this);
 }
 
-Fixed Fixed::operator++(int)
+Fixed Fixed::operator++(int)	 // Postfix increment operator.
 {
 	Fixed temp = *this;
 	++*this;
+	return (temp);
+}
+
+Fixed &Fixed::operator--()		 // Prefix decrement operator.
+{
+	(this->fp_value)--;
+	return (*this);
+}
+
+Fixed Fixed::operator--(int)	 // Postfix increment operator.
+{
+	Fixed temp = *this;
+	--*this;
 	return (temp);
 }
 
