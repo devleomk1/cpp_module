@@ -6,13 +6,13 @@
 #    By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 19:07:33 by jisokang          #+#    #+#              #
-#    Updated: 2022/05/15 00:10:30 by jisokang         ###   ########.fr        #
+#    Updated: 2022/05/18 16:53:10 by jisokang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= a.out
 
-CC		= clang++
+CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
 

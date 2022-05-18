@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:01:54 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/06 21:31:04 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:53:34 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ public:
 	int		toInt( void ) const;
 	float	toFloat( void ) const;
 };
-
-//이건 왜 밖으로 빼야하는 걸까?
 std::ostream &operator<<(std::ostream &stream, const Fixed &f);		//insertion Asginment operator
 
 

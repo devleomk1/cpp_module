@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+         #
+#    By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 22:28:50 by jisokang          #+#    #+#              #
-#    Updated: 2022/05/05 22:29:29 by jisokang         ###   ########.fr        #
+#    Updated: 2022/05/18 16:53:10 by jisokang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= a.out
 
-CC		= clang++
+CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
 
