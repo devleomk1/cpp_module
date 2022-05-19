@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 21:03:39 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/19 13:19:26 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:24:17 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,28 @@ ScavTrap::ScavTrap( const ScavTrap &src )
 {
 	std::cout << YELLOW "Copy" RESET " constructor called" << std::endl;
 	*this = src;
+}
+
+void ScavTrap::attack( const std::string &target )
+{
+	if (_hp == 0)
+	{
+		std::cout << MAGENTA << _name << RESET "은(는) 이미 쓰러졌다." << std::endl;
+		return ;
+	}
+
+	if (_ep == 0)
+	{
+		std::cout << MAGENTA << _name << RESET "은(는) EP가 부족하다." << std::endl;
+		return ;
+	}
+	
+	_ep--;
+	std::cout
+		<< MAGENTA << _name << RESET "의 [" BLUE "강도질" RESET "] 공격!, " YELLOW 
+		<< target << RESET "은(는) " 
+		<< _ad << " 데미지를 받았다." 
+		<< std::endl;
 }
 
 void ScavTrap::guardGate()

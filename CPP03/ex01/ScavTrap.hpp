@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 21:03:41 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/19 13:47:59 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:09:28 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
     ScavTrap &operator=( const ScavTrap &src );
     ~ScavTrap();
 
+    void attack( const std::string &target );
     void guardGate();
 };
 
