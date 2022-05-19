@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:30 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 22:34:45 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:44:01 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,22 @@
 
 int	main( void )
 {
-	ClapTrap a;
-	a.printStatus();
-
 	ClapTrap c( "CL4P-TP1" );
 	c.printStatus();
-
-	ClapTrap d( c );
-	d.printStatus();
-
 	
 	c.attack( "Psycho" );
 	c.printStatus();
 
-	c.setAd( 3 );
-	c.attack( "Psycho" );
+	c.takeDamage( 1 );
 	c.printStatus();
 	
-	c.takeDamage( 4294967295 );
+	c.beRepaired( 5 );
 	c.printStatus();
-
-	c.beRepaired( 4294967295 );
+	
+	for (size_t i = 0; i < 10; i++)
+		c.attack( "BADASS Psyco" );
 	c.printStatus();
+	
 
 	c.takeDamage( 10 );
 	c.printStatus();

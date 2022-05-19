@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:24 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 22:32:50 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:43:00 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void ClapTrap::attack( const std::string &target )
 	{
 		std::cout
 			<< "ClapTrap " MAGENTA
-			<< _name << RESET " doesn't have HP to fight."
+			<< _name << RESET "은(는) 이미 쓰러졌다."
 			<< std::endl;
 		return ;
 	}
@@ -65,7 +65,7 @@ void ClapTrap::attack( const std::string &target )
 	{
 		std::cout
 			<< "ClapTrap "  MAGENTA 
-			<< _name << RESET " not enough EP!"
+			<< _name << RESET "은(는) EP가 부족하다."
 			<< std::endl;
 		return ;
 	}
@@ -73,9 +73,9 @@ void ClapTrap::attack( const std::string &target )
 	_ep--;
 	std::cout
 		<< "ClapTrap " MAGENTA 
-		<< _name << RESET " attacks " YELLOW 
-		<< target << RESET ", causing " 
-		<< _ad << " points of damage!" 
+		<< _name << RESET "의 공격!, " YELLOW 
+		<< target << RESET "은(는) " 
+		<< _ad << " 데미지를 받았다." 
 		<< std::endl;
 
 }
@@ -86,7 +86,7 @@ void ClapTrap::takeDamage( unsigned int amount )
 	{
 		std::cout
 			<< "ClapTrap " MAGENTA 
-			<< _name << RESET " already " RED "HP 0" RESET
+			<< _name << RESET "은(는) 이미 쓰러졌다." RED "HP 0" RESET
 			<< std::endl;
 		return ;
 	}
@@ -98,8 +98,14 @@ void ClapTrap::takeDamage( unsigned int amount )
 	
 	std::cout
 		<< "ClapTrap " MAGENTA
-		<< _name << RESET " take damage!! \t[" RED "HP -" << amount << RESET "]"
+		<< _name << RESET "은(는) 공격 받았다!! \t[" RED "HP -" << amount << RESET "]"
 		<< std::endl;
+	if (_hp == 0)
+	{
+		std::cout
+			<< "ClapTrap " MAGENTA
+			<< _name << RESET "은(는) 눈앞이 깜깜해졌다." << std::endl;
+	}
 }
 
 void ClapTrap::beRepaired( unsigned int amount )
@@ -108,7 +114,7 @@ void ClapTrap::beRepaired( unsigned int amount )
 	{
 		std::cout
 			<< "ClapTrap " MAGENTA
-			<< _name << RESET " doesn't have HP to fight."
+			<< _name << RESET " 은(는) 이미 쓰러졌다."
 			<< std::endl;
 		return ;
 	}
@@ -117,7 +123,7 @@ void ClapTrap::beRepaired( unsigned int amount )
 	{
 		std::cout
 			<< "ClapTrap " MAGENTA 
-			<< _name << RESET " not enough EP!"
+			<< _name << RESET " 은(는) EP가 부족하다."
 			<< std::endl;
 		return ;
 	}
@@ -126,11 +132,11 @@ void ClapTrap::beRepaired( unsigned int amount )
 		_hp = CLAP_MAX_HP;
 	else
 		_hp += amount;
-
+	_ep--;
 	std::cout 
 		<< "ClapTrap " MAGENTA
 		<< _name << RESET 
-		<< " repaired!\t[" GREEN "HP +"<< amount << RESET "]" << std::endl;
+		<< "의 자가수리!\t[" GREEN "HP +"<< amount << RESET "]" << std::endl;
 }
 
 void ClapTrap::setAd( unsigned int amount )
