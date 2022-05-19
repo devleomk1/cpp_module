@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:24 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/19 12:43:00 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:15:16 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 ClapTrap::ClapTrap( void ) : _name(CLAP_DF_NAME), _hp(CLAP_HP), _ep(CLAP_EP), _ad(CLAP_AD)
 {
 	std::cout
-		<< "AAAAAAAAAnd Helloooooo!\t\t [" GREEN "Constructor" RESET "]"
+		<< "[ClapTrap]: AAAAAAAAAnd Helloooooo!\t\t [" GREEN "Constructor" RESET "]"
 		<< std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name) : _name(name), _hp(CLAP_HP), _ep(CLAP_EP), _ad(CLAP_AD)
 {
 	std::cout
-		<< "AAAAAAAAAnd Helloooooo!\t\t [" GREEN "Constructor" RESET "]"
+		<< "[ClapTrap]: AAAAAAAAAnd Helloooooo!\t\t [" GREEN "Constructor" RESET "]"
 		<< std::endl;
 }
 
@@ -54,26 +54,19 @@ void ClapTrap::attack( const std::string &target )
 {
 	if (_hp == 0)
 	{
-		std::cout
-			<< "ClapTrap " MAGENTA
-			<< _name << RESET "은(는) 이미 쓰러졌다."
-			<< std::endl;
+		std::cout << MAGENTA << _name << RESET "은(는) 이미 쓰러졌다." << std::endl;
 		return ;
 	}
 
 	if (_ep == 0)
 	{
-		std::cout
-			<< "ClapTrap "  MAGENTA 
-			<< _name << RESET "은(는) EP가 부족하다."
-			<< std::endl;
+		std::cout << MAGENTA << _name << RESET "은(는) EP가 부족하다." << std::endl;
 		return ;
 	}
 	
 	_ep--;
 	std::cout
-		<< "ClapTrap " MAGENTA 
-		<< _name << RESET "의 공격!, " YELLOW 
+		<< MAGENTA << _name << RESET "의 공격!, " YELLOW 
 		<< target << RESET "은(는) " 
 		<< _ad << " 데미지를 받았다." 
 		<< std::endl;
@@ -84,10 +77,7 @@ void ClapTrap::takeDamage( unsigned int amount )
 {
 	if (_hp == 0)
 	{
-		std::cout
-			<< "ClapTrap " MAGENTA 
-			<< _name << RESET "은(는) 이미 쓰러졌다." RED "HP 0" RESET
-			<< std::endl;
+		std::cout << MAGENTA << _name << RESET "은(는) 이미 쓰러졌다." RED "HP 0" RESET << std::endl;
 		return ;
 	}
 
@@ -96,15 +86,10 @@ void ClapTrap::takeDamage( unsigned int amount )
 	else
 		_hp -= amount;
 	
-	std::cout
-		<< "ClapTrap " MAGENTA
-		<< _name << RESET "은(는) 공격 받았다!! \t[" RED "HP -" << amount << RESET "]"
-		<< std::endl;
+	std::cout << MAGENTA << _name << RESET "은(는) 공격 받았다!! \t[" RED "HP -" << amount << RESET "]" << std::endl;
 	if (_hp == 0)
 	{
-		std::cout
-			<< "ClapTrap " MAGENTA
-			<< _name << RESET "은(는) 눈앞이 깜깜해졌다." << std::endl;
+		std::cout << MAGENTA << _name << RESET "은(는) 눈앞이 깜깜해졌다." << std::endl;
 	}
 }
 
@@ -112,19 +97,13 @@ void ClapTrap::beRepaired( unsigned int amount )
 {
 	if (_hp == 0)
 	{
-		std::cout
-			<< "ClapTrap " MAGENTA
-			<< _name << RESET " 은(는) 이미 쓰러졌다."
-			<< std::endl;
+		std::cout <<  MAGENTA << _name << RESET " 은(는) 이미 쓰러졌다." << std::endl;
 		return ;
 	}
 
 	if (_ep == 0)
 	{
-		std::cout
-			<< "ClapTrap " MAGENTA 
-			<< _name << RESET " 은(는) EP가 부족하다."
-			<< std::endl;
+		std::cout <<  MAGENTA << _name << RESET " 은(는) EP가 부족하다." << std::endl;
 		return ;
 	}
 	
@@ -134,15 +113,14 @@ void ClapTrap::beRepaired( unsigned int amount )
 		_hp += amount;
 	_ep--;
 	std::cout 
-		<< "ClapTrap " MAGENTA
-		<< _name << RESET 
+		<< MAGENTA << _name << RESET 
 		<< "의 자가수리!\t[" GREEN "HP +"<< amount << RESET "]" << std::endl;
 }
 
 void ClapTrap::setAd( unsigned int amount )
 {
 	_ad = amount;
-	std::cout << "ClapTrap " << _name << " set weapon!\t[" YELLOW "AD " << amount << RESET "]" << std::endl;
+	std::cout << _name << " set weapon!\t[" YELLOW "AD " << amount << RESET "]" << std::endl;
 }
 
 void ClapTrap::printStatus ( void )

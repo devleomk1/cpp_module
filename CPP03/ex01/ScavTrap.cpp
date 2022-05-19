@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 21:03:39 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 22:52:52 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:19:26 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,6 @@ ScavTrap::ScavTrap( const ScavTrap &src )
 
 void ScavTrap::guardGate()
 {
-	std::cout
-		<< "SlapTrap "  MAGENTA 
-		<< _name << RESET " Gate keeper mode ON!"
-		<< std::endl;
+	std::cout << MAGENTA << _name << RESET " 게이트 키퍼 모드 ON!" << std::endl;
 	
 }

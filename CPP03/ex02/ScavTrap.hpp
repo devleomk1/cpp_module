@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 21:03:41 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 22:20:42 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:47:52 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 # define SCAV_AD		        20
 # define SCAV_MAX_HP	        1000
 
-// default class는 private???
-// class ScavTrap : ClapTrap
 class ScavTrap : public ClapTrap
 {
 private:

@@ -6,40 +6,53 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:07:30 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/14 22:39:41 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:46:37 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main( void )
 {
-	ScavTrap a;
-	a.printStatus();
 	ClapTrap c( "CL4P-TP" );
+	c.printStatus();
 	ScavTrap s( "SC4V-TR" );
+	s.printStatus();
+	FragTrap f( "FR4G-TR" );
+	f.printStatus();
+
+	std::cout << "--------------------------------------------------------------" << std::endl;
+
+	c.attack("BADASS PSYCO");
+	s.attack("BADASS PSYCO");
+	f.attack("BADASS PSYCO");
+
+	std::cout << "--------------------------------------------------------------" << std::endl;
+	
+	c.takeDamage(10);
+	s.takeDamage(10);
+	f.takeDamage(10);
+
+	std::cout << "--------------------------------------------------------------" << std::endl;
+
+	c.beRepaired(10);
+	s.beRepaired(10);
+	f.beRepaired(10);
+	
+	std::cout << "--------------------------------------------------------------" << std::endl;
 
 	c.printStatus();
 	s.printStatus();
-	
-	c.attack( "Psycho" );
-	c.printStatus();
+	f.printStatus();
 
-	c.setAd( 3 );
-	c.attack( "Psycho" );
-	c.printStatus();
-	
-	c.takeDamage( 4294967295 );
-	c.printStatus();
+	std::cout << "--------------------------------------------------------------" << std::endl;
 
-	c.beRepaired( 4294967295 );
-	c.printStatus();
+	s.guardGate();
+	f.highFivesGuys();
 
-	c.takeDamage( 10 );
-	c.printStatus();
-	
-	c.takeDamage( 5 );
+	std::cout << "--------------------------------------------------------------" << std::endl;
 
 	return 0;
 }

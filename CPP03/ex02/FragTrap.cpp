@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 23:56:22 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/15 00:10:01 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:36:57 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ FragTrap::FragTrap( void ) : ClapTrap()
 	_ep = FRAG_EP;
 	_ad = FRAG_AD;
 	std::cout
-		<< "[FragTrap]: Scav! IN\t\t\t[Child " GREEN "Constructor" RESET "]"
+		<< "[FragTrap]: FRRRAG! IN\t\t\t[Child " GREEN "Constructor" RESET "]"
 		<< std::endl;
 }
 
@@ -29,7 +29,7 @@ FragTrap::FragTrap( std::string name) : ClapTrap(name)
 	_ep = FRAG_EP;
 	_ad = FRAG_AD;
 	std::cout
-		<< "[FragTrap]: Scav! IN\t\t\t[Child " GREEN "Constructor" RESET "]"
+		<< "[FragTrap]: FRRRAG! IN\t\t\t[Child " GREEN "Constructor" RESET "]"
 		<< std::endl;
 }
 
@@ -60,7 +60,7 @@ FragTrap::FragTrap( const FragTrap &src )
 void FragTrap::highFivesGuys()
 {
 	std::cout
-		<< "FragTrap "  MAGENTA 
+		<< MAGENTA 
 		<< _name << RESET " HIGH FIVE GUYS!!!!!!!!!!"
 		<< std::endl;
 	
