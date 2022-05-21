@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:54:34 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/19 21:55:46 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/21 17:40:05 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ public:
     Cat &operator=( const Cat &src );
     virtual ~Cat();
     
-    virtual void makeSound() const;
+    virtual void makeSound( void ) const;
+    const Brain *getBrain( void ) const;
 };
 
 #endif

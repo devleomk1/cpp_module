@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:42:42 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/16 16:40:19 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/21 20:31:32 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ Cat::Cat ( void )
 Cat &Cat::operator=( const Cat &src )
 {
 	std::cout << YELLOW "Copy" RESET " assignment operator called" << std::endl;
-	type = src.type;
-	brain = src.brain;
-
+	if (this != &src)
+	{
+		type = src.getType();
+		*(this->brain) = *(src.getBrain());
+	}
 	return (*this);
 }
 
@@ -35,6 +37,7 @@ Cat::Cat( const Cat &src )
 {
 	std::cout << YELLOW "Copy" RESET " constructor called" << std::endl;
 	*this = src;
+	
 }
 
 Cat::~Cat()
@@ -48,4 +51,11 @@ Cat::~Cat()
 void Cat::makeSound( void ) const
 {
 	std::cout << "[Cat]: 🐈 야옹야옹!" << std::endl;
+}
+
+const Brain *Cat::getBrain() const
+{
+	if (this->brain)
+		return(this->brain);
+	return (NULL);
 }

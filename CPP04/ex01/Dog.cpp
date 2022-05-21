@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 03:58:37 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/16 16:41:44 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:10:20 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@ Dog::Dog ( void )
 Dog &Dog::operator=( const Dog &src )
 {
 	std::cout << YELLOW "Copy" RESET " assignment operator called" << std::endl;
-	type = src.type;
-	brain = src.brain;
-
+	if (this != &src)
+	{
+		type = src.getType();
+		*(this->brain) = *(src.getBrain());
+	}
 	return (*this);
 }
 
@@ -47,4 +49,11 @@ Dog::~Dog()
 void Dog::makeSound( void ) const
 {
 	std::cout << "[Dog]: 🐕 왈왈왈왈!" << std::endl;
+}
+
+const Brain *Dog::getBrain() const
+{
+	if (this->brain)
+		return (this->brain);
+	return (NULL);
 }

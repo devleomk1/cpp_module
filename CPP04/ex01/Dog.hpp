@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 03:58:40 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/16 15:42:27 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:08:58 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ public:
     Dog &operator=( const Dog &src );
     ~Dog();
 
-    void makeSound() const;
+    virtual void makeSound() const;
+    const Brain *getBrain( void ) const;
 };
 
 #endif
