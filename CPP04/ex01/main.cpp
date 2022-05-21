@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:20:01 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/21 20:27:26 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:34:13 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ int main( void )
             meta[i] = new Dog();
         else                        // 홀수
             meta[i] = new Cat();    
-        std::cout << "meta[" << i << "]: " << meta[i]->getType() << std::endl;
+        std::cout << "meta[" CYAN << i << RESET "]: " << meta[i]->getType() << " - ";
+        meta[i]->makeSound();
+        std::cout << std::endl;
     }
 
     Cat *nabi = new Cat();   
@@ -49,7 +51,6 @@ int main( void )
     std::cout << "meta[2] is nabi?: " << meta[2]->getType() <<" think :" << meta[2] << std::endl;
     delete nabi;
     std::cout << "meta[2] is nabi?: " << meta[2]->getType() <<" think :" << meta[2] << std::endl;
-    
 
     for (size_t i = 0; i < META_SIZE; i++)
     {
