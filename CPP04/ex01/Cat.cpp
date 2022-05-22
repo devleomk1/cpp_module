@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:42:42 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/21 20:31:32 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/22 22:26:56 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Cat::Cat( const Cat &src )
 {
 	std::cout << YELLOW "Copy" RESET " constructor called" << std::endl;
 	*this = src;
-	
+
 }
 
 Cat::~Cat()
@@ -58,4 +58,21 @@ const Brain *Cat::getBrain() const
 	if (this->brain)
 		return(this->brain);
 	return (NULL);
+}
+
+void Cat::setBrainWashing( const std::string str)
+{
+	std::cout << "Brainwashing... 👉 [" << str << "]" << std::endl;
+	this->brain->SetBrain(str);
+}
+
+void Cat::printBrain( void ) const
+{
+	std::cout << "[" YELLOW "Print Brain" RESET "]" << std::endl;
+	for (size_t i = 0; i < IDEA_SIZE; i++)
+	{
+		std::cout << "["<< this->brain->getIdea(i) << "]";
+	}
+	std::cout << std::endl;
+
 }

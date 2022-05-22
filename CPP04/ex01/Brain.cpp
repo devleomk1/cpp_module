@@ -64,7 +64,7 @@ void Brain::SetBrain( const std::string str )
 	}
 }
 
-std::string Brain::getIdea( void ) const
+std::string Brain::getIdea( const size_t i )
 {
-	return (this->ideas[0]);
+	return (this->ideas[i]);
 }

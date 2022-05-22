@@ -6,10 +6,11 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:20:01 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/21 21:34:13 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/22 21:32:55 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iomanip>
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Brain.hpp"
@@ -17,46 +18,79 @@
 #define META_SIZE   10
 
 // Polymorphism = 다향성
-int main( void ) 
+
+void printHead( std::string str)
 {
-    std::cout << "\n===============================================" << std::endl;
-    std::cout << "===================  " GREEN "Check Memory leaks" RESET "  =====================" << std::endl;
-    std::cout << "===============================================\n" << std::endl;
+	std::cout << "\n" << std::setfill('=') << std::setw(48) << "" << std::endl;
+	std::cout << GREEN " "<< str << RESET << std::endl;
+	std::cout << std::setfill('=') << std::setw(48) << "\n" << std::endl;
+}
 
-    const Animal *d = new Dog();
-    const Animal *c = new Cat();
+void testLeaks( void )
+{
+	printHead("Check Memory Leaks");
+	const Animal *d = new Dog();
+	const Animal *c = new Cat();
 
-    delete d;   //should not crate a leak!
-    delete c;
+	delete d;	//should not crate a leak!
+	delete c;
+}
 
-    std::cout << "\n===============================================" << std::endl;
-    std::cout << "===================  " GREEN "O K" RESET "  =====================" << std::endl;
-    std::cout << "===============================================\n" << std::endl;
+void testArray( void )
+{
+	printHead("Array");
+	Animal *meta[META_SIZE];
 
-    Animal *meta[META_SIZE];
+	for (size_t i = 0; i < META_SIZE; i++)
+	{
+		if (i % 2 == 0)				// 짝수
+			meta[i] = new Dog();
+		else						// 홀수
+			meta[i] = new Cat();
+		std::cout << "meta[" CYAN << i << RESET "]: " << meta[i]->getType() << " - ";
+		meta[i]->makeSound();
+		std::cout << std::endl;
+	}
+	std::cout << "Meta Array construction Done\n" << std::endl;
 
-    for (size_t i = 0; i < META_SIZE; i++)
-    {
-        if (i % 2 == 0)             // 짝수
-            meta[i] = new Dog();
-        else                        // 홀수
-            meta[i] = new Cat();    
-        std::cout << "meta[" CYAN << i << RESET "]: " << meta[i]->getType() << " - ";
-        meta[i]->makeSound();
-        std::cout << std::endl;
-    }
+	for (size_t i = 0; i < META_SIZE; i++)
+	{
+		delete meta[i];
+	}
+	std::cout << "Meta Array destruction Done\n" << std::endl;
+}
 
-    Cat *nabi = new Cat();   
-    *meta[2] = *nabi;
-    std::cout << "meta[2] is nabi?: " << meta[2]->getType() <<" think :" << meta[2] << std::endl;
-    delete nabi;
-    std::cout << "meta[2] is nabi?: " << meta[2]->getType() <<" think :" << meta[2] << std::endl;
+void testDeepCopy( void )
+{
+	printHead("Deep Copy");
 
-    for (size_t i = 0; i < META_SIZE; i++)
-    {
-        std::cout << "meta["<< i <<"]: " << meta[i]->getType() <<" think :" << meta[i] << std::endl;
-        delete meta[i];
-        std::cout << "meta["<< i <<"]: " << meta[i]->getType() <<" think :" << meta[i] << std::endl;
-    }
-    return 0;
+	Cat *cat1 = new Cat();
+	Cat *cat2 = new Cat();
+
+	cat1->printBrain();
+	cat1->setBrainWashing("🧠");
+	cat1->printBrain();
+
+	std::cout << "cat2's ";
+	cat2->printBrain();
+
+	std::cout << "cat2 = cat1" << std::endl;
+	cat2 = cat1;
+
+	std::cout << "cat2's ";
+	cat2->printBrain();
+
+	std::cout << "delete cat1 " << std::endl;
+	delete cat1;
+
+	std::cout << "cat2's ";
+	cat2->printBrain();
+}
+
+int main( void )
+{
+	testLeaks();
+	testArray();
+	testDeepCopy();
+	return (0);
 }

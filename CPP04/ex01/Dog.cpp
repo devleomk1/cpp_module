@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 03:58:37 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/21 21:10:20 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/22 22:27:10 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,21 @@ const Brain *Dog::getBrain() const
 	if (this->brain)
 		return (this->brain);
 	return (NULL);
+}
+
+void Dog::setBrainWashing( const std::string str)
+{
+	std::cout << "Brainwashing... 👉 [" << str << "]" << std::endl;
+	this->brain->SetBrain(str);
+}
+
+void Dog::printBrain( void ) const
+{
+	std::cout << "[" YELLOW "Print Brain" RESET "]" << std::endl;
+	for (size_t i = 0; i < IDEA_SIZE; i++)
+	{
+		std::cout << "["<< this->brain->getIdea(i) << "]";
+	}
+	std::cout << std::endl;
+
 }

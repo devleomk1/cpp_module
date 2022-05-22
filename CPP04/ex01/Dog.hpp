@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 03:58:40 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/21 21:32:15 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/22 22:18:26 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ public:
     Dog( const std::string name );
     Dog( const Dog &src );
     Dog &operator=( const Dog &src );
-    ~Dog();
+    virtual ~Dog();
 
     virtual void makeSound() const;
     const Brain *getBrain( void ) const;
+    void setBrainWashing( const std::string str );
+    void printBrain( void ) const;
 };
 
 #endif

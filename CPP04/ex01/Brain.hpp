@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 00:21:52 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/21 16:53:09 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/22 18:00:49 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 
     void SetBrain( const std::string str );
     void SetIdea( const size_t i, const std::string str );
-    std::string getIdea( void ) const;
+    std::string getIdea( const size_t i );
 
 };
 

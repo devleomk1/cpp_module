@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 03:58:40 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/19 20:26:31 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/22 21:28:01 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
     Dog( const std::string name );
     Dog( const Dog &src );
     Dog &operator=( const Dog &src );
-    ~Dog();
+    virtual ~Dog();
 
     void makeSound() const;
 };
