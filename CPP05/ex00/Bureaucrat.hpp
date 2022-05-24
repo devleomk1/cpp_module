@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:08 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/24 17:18:26 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/24 19:37:01 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+# include <exception>	//for std::exception
 # include "color.hpp"
 
 # define	DEFAULT_NAME	"NO NAME"
@@ -30,8 +31,8 @@ public:
 	Bureaucrat &operator=( const Bureaucrat &src );
 	virtual ~Bureaucrat( void );
 
-	// Bureaucrat::GradeTooHighException
-	// Bureaucrat::GradeTooLowException.
+	void Bureaucrat::GradeTooHighException();
+	void Bureaucrat::GradeTooLowException();
 
 	std::string getName();
 	unsigned int getGrade();

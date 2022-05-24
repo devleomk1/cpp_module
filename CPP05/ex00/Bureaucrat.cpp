@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/24 17:42:40 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/24 19:36:28 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Bureaucrat::Bureaucrat( std::string name, int grade) : _name(name)
 	std::cout
 		<< "[" GREEN "Constructor" RESET " (Bureaucrat 💼)]"
 		<< std::endl;
-
+	_grade = grade;
 
 }
 
@@ -51,11 +51,11 @@ Bureaucrat &Bureaucrat::operator=( const Bureaucrat &src )
 	return (*this);
 }
 
-std::ostream &operator<<( std::ostream &o, Bureaucrat const &i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
+//std::ostream &operator<<( std::ostream &o, Bureaucrat const &i )
+//{
+//	//o << "Value = " << i.getValue();
+//	return o;
+//}
 
 std::string Bureaucrat::getName()
 {
@@ -69,10 +69,13 @@ unsigned int Bureaucrat::getGrade()
 
 void Bureaucrat::increGrade()
 {
+	if(_grade <= 1)
+
 	this->_grade--;
 }
 
 void Bureaucrat::decreGrade()
 {
+	//if
 	this->_grade++;
 }

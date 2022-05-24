@@ -6,7 +6,7 @@
 #    By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 14:29:20 by jisokang          #+#    #+#              #
-#    Updated: 2022/05/19 14:29:34 by jisokang         ###   ########.fr        #
+#    Updated: 2022/05/24 19:28:26 by jisokang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
 
-SRCS	=	Bureaucrat.cpp
+SRCS	=	Bureaucrat.cpp\
+			main.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 %.o : %.cpp
