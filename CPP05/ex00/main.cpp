@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:25:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/25 16:32:37 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/25 17:05:14 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ void printTitle( std::string str )
 	std::cout << std::endl << std::setw(35) << std::setfill('=') << "" << std::endl;
 	std::cout << GREEN << str << RESET << std::endl;
 	std::cout << std::setw(35) << std::setfill('=') << "" << std::endl;
+}
+
+void printTestPass()
+{
+	std::cout << "[✅Test " GREEN "PASS" RESET"] Work Good!👍" << std::endl;
 }
 
 int main( void )
@@ -32,11 +37,11 @@ int main( void )
 		std::cout << t;
 		t.increGrade();
 		std::cout << t;
-		std::cout << "[✅Test " GREEN "PASS" RESET"] " MAGENTA << t.getName() << RESET " Work Good!👍" << std::endl;
+		printTestPass();
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << YELLOW << e.what() << RESET "\n";
+		std::cerr << "[🚨Exception]: " YELLOW << e.what() << RESET "\n";
 	}
 
 	/**
@@ -49,11 +54,11 @@ int main( void )
 		std::cout << p;
 		p.increGrade();
 		std::cout << p;
-		std::cout << "[✅Test " GREEN "PASS" RESET"] " MAGENTA << p.getName() << RESET " Work Good!👍" << std::endl;
+		printTestPass();
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << YELLOW << e.what() << RESET "\n";
+		std::cerr << "[🚨Exception]: " YELLOW << e.what() << RESET "\n";
 	}
 
 	/**
@@ -66,12 +71,11 @@ int main( void )
 		std::cout << k;
 		k.increGrade();
 		std::cout << k;
-		std::cout << k.getName() << " Work Good!" << std::endl;
-		std::cout << "[✅Test " GREEN "PASS" RESET"] " MAGENTA << k.getName() << RESET " Work Good!👍" << std::endl;
+		printTestPass();
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << YELLOW << e.what() << RESET "\n";
+		std::cerr << "[🚨Exception]: " YELLOW << e.what() << RESET "\n";
 	}
 
 
@@ -85,14 +89,11 @@ int main( void )
 		std::cout << r;
 		r.decreGrade();
 		std::cout << r;
-		std::cout << "[✅Test " GREEN "PASS" RESET"] " MAGENTA << r.getName() << RESET " Work Good!👍" << std::endl;
+		printTestPass();
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << YELLOW << e.what() << RESET "\n";
+		std::cerr << "[🚨Exception]: " YELLOW << e.what() << RESET "\n";
 	}
-
-
 	return (0);
-
 }

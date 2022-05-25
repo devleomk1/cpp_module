@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/25 15:39:10 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/25 17:02:30 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,12 @@ void Bureaucrat::decreGrade()
 
 const char *Bureaucrat::GradeTooHighException::what( void ) const throw() //여기에 throw는 왜 붙일 까?
 {
-	return ("🚨 Grade Too High!");
+	return ("Grade Too High!");
 }
 
 const char *Bureaucrat::GradeTooLowException::what( void ) const throw() //여기에 throw는 왜 붙일 까?
 {
-	return ("🚨 Grade Too Low!");
+	return ("Grade Too Low!");
 }
 
 
