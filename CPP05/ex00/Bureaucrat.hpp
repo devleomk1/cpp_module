@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:08 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/24 19:37:01 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/25 14:01:19 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 # include "color.hpp"
 
 # define	DEFAULT_NAME	"NO NAME"
+# define	DEFAULT_GRADE	150
+# define	GRADE_HIGHEST	1
+# define	GRADE_LOWEST	150
+
 
 class Bureaucrat
 {
@@ -31,20 +35,33 @@ public:
 	Bureaucrat &operator=( const Bureaucrat &src );
 	virtual ~Bureaucrat( void );
 
-	void Bureaucrat::GradeTooHighException();
-	void Bureaucrat::GradeTooLowException();
+	// getter
+	const std::string &getName() const;
+	const unsigned int &getGrade() const;
 
-	std::string getName();
-	unsigned int getGrade();
-
+	// If the grade is out of range, both of them will throw the same exceptions as the constructor.
 	void increGrade();
 	void decreGrade();
-	// If the grade is out of range, both of them will throw the same exceptions as the constructor.
 
+	// Bureaucrat::GradeTooLowException
+	class GradeTooHighException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
 	/*
 	Remember. Since grade 1 is the highest one and 150 the lowest,
 	incrementing a grade 3 should give a grade 2 to the bureaucrat.
 	*/
+
+
 };
+std::ostream &operator<<(std::ostream &stream, const Bureaucrat &b);
 
 #endif
