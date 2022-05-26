@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:08 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/25 14:01:19 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/25 20:43:40 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ public:
 	// If the grade is out of range, both of them will throw the same exceptions as the constructor.
 	void increGrade();
 	void decreGrade();
+
+	// Addtional Function
+	void signForm();
 
 	// Bureaucrat::GradeTooLowException
 	class GradeTooHighException : public std::exception

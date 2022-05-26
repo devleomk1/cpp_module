@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:09:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/25 17:14:53 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/25 21:14:40 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
 	const unsigned int		_required_exec_grade;
 public:
 	Form( void );
-	Form( std::string name, int grade );
+	Form( std::string name, unsigned int required_sign_grade, unsigned int required_exec_grade );
 	Form( const Form &src );
 	Form &operator=( const Form &src );
 	virtual ~Form( void );
@@ -38,7 +38,9 @@ public:
 	void increGrade();
 	void decreGrade();
 
-	// Form::GradeTooLowException
+	// Addtional Function ex01
+	void beSigned();
+
 	class GradeTooHighException : public std::exception
 	{
 		public:
@@ -50,10 +52,6 @@ public:
 		public:
 			virtual const char *what() const throw();
 	};
-	/*
-	Remember. Since grade 1 is the highest one and 150 the lowest,
-	incrementing a grade 3 should give a grade 2 to the Form.
-	*/
 
 
 };
