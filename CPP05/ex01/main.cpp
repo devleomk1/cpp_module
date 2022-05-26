@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:25:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/25 17:05:14 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/26 21:44:53 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iomanip>
 
 void printTitle( std::string str )
@@ -27,68 +28,11 @@ void printTestPass()
 
 int main( void )
 {
-	/**
-	 * TEST Normal Case
-	 */
-	printTitle("Noraml Test Case");
-	try
-	{
-		Bureaucrat t("Tom", 15);
-		std::cout << t;
-		t.increGrade();
-		std::cout << t;
-		printTestPass();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "[🚨Exception]: " YELLOW << e.what() << RESET "\n";
-	}
-
-	/**
-	 * Wrong New Case
-	 */
-	printTitle("Wrong New Case");
-	try
-	{
-		Bureaucrat p("Pon", 999);
-		std::cout << p;
-		p.increGrade();
-		std::cout << p;
-		printTestPass();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "[🚨Exception]: " YELLOW << e.what() << RESET "\n";
-	}
-
-	/**
-	 * Wrong Case ++
-	 */
-	printTitle("Wrong Test Case ++");
-	try
-	{
-		Bureaucrat k("Kim", 1);
-		std::cout << k;
-		k.increGrade();
-		std::cout << k;
-		printTestPass();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "[🚨Exception]: " YELLOW << e.what() << RESET "\n";
-	}
-
-
-	/**
-	 * Wrong Case --
-	 */
 	printTitle("Wrong Test Case --");
 	try
 	{
-		Bureaucrat r("Rat", 150);
-		std::cout << r;
-		r.decreGrade();
-		std::cout << r;
+		Form a("Form-A", 10, 10);
+		std::cout << a;
 		printTestPass();
 	}
 	catch(const std::exception& e)

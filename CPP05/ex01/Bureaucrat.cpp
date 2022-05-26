@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/25 17:02:30 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/26 22:16:01 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,19 @@ void Bureaucrat::decreGrade()
 	this->_grade++;
 }
 
+void Bureaucrat::signForm(Form &f) const
+{
+	try
+	{
+		f.beSigned(*this);
+		std::cout << MAGENTA << this->getName() << RESET " signed " CYAN << f.getName() << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << MAGENTA << this->getName() << RESET " couldn't sign " CYAN << f.getName() << RESET "because" << e.what() << std::endl;
+	}
+}
+
 const char *Bureaucrat::GradeTooHighException::what( void ) const throw() //여기에 throw는 왜 붙일 까?
 {
 	return ("Grade Too High!");
@@ -96,6 +109,5 @@ const char *Bureaucrat::GradeTooLowException::what( void ) const throw() //여�
 {
 	return ("Grade Too Low!");
 }
-
 
 

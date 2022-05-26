@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:09:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/25 21:14:40 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/26 22:16:34 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,21 @@
 # define FORM_HPP
 
 # include "Bureaucrat.hpp"
+# include <exception>
 # include "color.hpp"
+
+# define DEFAULT_FORM_NAME	"DEFAULT FORM"
+# define DEFAULT_FORM_SIGN	false
+# define DEFAULT_SIGN_GRADE	150
+# define DEFAULT_EXEC_GRADE	150
+
+//Prototype
+class Bureaucrat;
 
 class Form
 {
 private:
+	/* 모든 속성들은 private 입니다. protected가 아닙니다. */
 	const std::string		_name;
 	bool					_sign;
 	const unsigned int		_required_sign_grade;
@@ -31,15 +41,17 @@ public:
 	virtual ~Form( void );
 
 	// getter
-	const std::string &getName() const;
-	const unsigned int &getGrade() const;
+	const std::string	&getName( void ) const;
+	const bool 			&getSign( void ) const;
+	const unsigned int	&getRequiredSignGrade( void ) const;
+	const unsigned int	&getRequiredExecGrade( void ) const;
 
 	// If the grade is out of range, both of them will throw the same exceptions as the constructor.
 	void increGrade();
 	void decreGrade();
 
 	// Addtional Function ex01
-	void beSigned();
+	void beSigned(const Bureaucrat &b);
 
 	class GradeTooHighException : public std::exception
 	{

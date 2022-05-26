@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:08 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/25 20:43:40 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/26 22:10:33 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <exception>	//for std::exception
+# include "Form.hpp"
 # include "color.hpp"
 
 # define	DEFAULT_NAME	"NO NAME"
@@ -22,6 +23,8 @@
 # define	GRADE_HIGHEST	1
 # define	GRADE_LOWEST	150
 
+//Prototype
+class Form;
 
 class Bureaucrat
 {
@@ -44,7 +47,7 @@ public:
 	void decreGrade();
 
 	// Addtional Function
-	void signForm();
+	void signForm(Form &form) const;
 
 	// Bureaucrat::GradeTooLowException
 	class GradeTooHighException : public std::exception
@@ -58,11 +61,6 @@ public:
 		public:
 			virtual const char *what() const throw();
 	};
-	/*
-	Remember. Since grade 1 is the highest one and 150 the lowest,
-	incrementing a grade 3 should give a grade 2 to the bureaucrat.
-	*/
-
 
 };
 std::ostream &operator<<(std::ostream &stream, const Bureaucrat &b);
