@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:25:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/26 21:44:53 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/26 22:52:59 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,50 @@ void printTestPass()
 
 int main( void )
 {
-	printTitle("Wrong Test Case --");
+	printTitle("Only Form Case");
 	try
 	{
-		Form a("Form-A", 10, 10);
-		std::cout << a;
+		Form form_1("Form-001", 20, 20);
+		std::cout << form_1;
+		Form form_2("Form-002", -123, -123);
 		printTestPass();
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << "[🚨Exception]: " YELLOW << e.what() << RESET "\n";
 	}
+
+	printTitle("Normal Sign Case");
+	try
+	{
+		Bureaucrat bure_t("Tom", 15);
+		Form form_a("Form-A", 20, 20);
+		std::cout << bure_t;
+		std::cout << form_a;
+		bure_t.signForm(form_a);
+		std::cout << form_a;
+		printTestPass();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "[🚨Exception]: " YELLOW << e.what() << RESET "\n";
+	}
+
+	printTitle("You Can't Sign Case");
+	try
+	{
+		Bureaucrat bure_t("Pon", 100);
+		Form form_a("Form-A", 20, 20);
+		std::cout << bure_t;
+		std::cout << form_a;
+		bure_t.signForm(form_a);
+		std::cout << form_a;
+		printTestPass();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "[🚨Exception]: " YELLOW << e.what() << RESET "\n";
+	}
+
 	return (0);
 }

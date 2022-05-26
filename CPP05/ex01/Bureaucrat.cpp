@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/26 22:16:01 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/26 22:46:42 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void Bureaucrat::signForm(Form &f) const
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << MAGENTA << this->getName() << RESET " couldn't sign " CYAN << f.getName() << RESET "because" << e.what() << std::endl;
+		std::cerr << MAGENTA << this->getName() << RESET " couldn't sign " CYAN << f.getName() << RESET " because " YELLOW << e.what() << RESET << std::endl;
 	}
 }
 

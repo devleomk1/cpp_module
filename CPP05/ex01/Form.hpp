@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:09:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/26 22:16:34 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/26 22:48:52 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,6 @@ public:
 	const bool 			&getSign( void ) const;
 	const unsigned int	&getRequiredSignGrade( void ) const;
 	const unsigned int	&getRequiredExecGrade( void ) const;
-
-	// If the grade is out of range, both of them will throw the same exceptions as the constructor.
-	void increGrade();
-	void decreGrade();
 
 	// Addtional Function ex01
 	void beSigned(const Bureaucrat &b);
