@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/26 22:46:42 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/27 15:05:21 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,20 @@ void Bureaucrat::signForm(Form &f) const
 	{
 		std::cerr << MAGENTA << this->getName() << RESET " couldn't sign " CYAN << f.getName() << RESET " because " YELLOW << e.what() << RESET << std::endl;
 	}
+}
+
+void Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << MAGENTA << this->getName() << RESET " executed " CYAN << form.getName() << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << MAGENTA << this->getName() << RESET " couldn't execute " CYAN << form.getName() << RESET " because " YELLOW << e.what() << RESET << std::endl;
+	}
+
 }
 
 const char *Bureaucrat::GradeTooHighException::what( void ) const throw() //여기에 throw는 왜 붙일 까?

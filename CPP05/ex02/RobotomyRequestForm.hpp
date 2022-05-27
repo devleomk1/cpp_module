@@ -3,11 +3,12 @@
 
 # include <iostream>
 # include <string>
+# include "Form.hpp"
 
 # define RRF_REQ_SIGN_GRADE	72
 # define RRF_REQ_EXEC_GRADE	45
 
-class RobotomyRequestForm
+class RobotomyRequestForm : public Form
 {
 
 	public:

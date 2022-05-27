@@ -3,22 +3,28 @@
 
 # include <iostream>
 # include <string>
+# include "Form.hpp"
 
 # define PPF_REQ_SIGN_GRADE	25
 # define PPF_REQ_EXEC_GRADE	5
 
-class PresidentialPardonForm
+# define PPF_STD_TARGET	"PPF_TARGET"
+
+class PresidentialPardonForm : public Form
 {
 
-	public:
-
-		PresidentialPardonForm();
-		PresidentialPardonForm( PresidentialPardonForm const & src );
-		~PresidentialPardonForm();
-
-		PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs );
-
 	private:
+		std::string	_target;
+	public:
+		PresidentialPardonForm( void );
+		PresidentialPardonForm( std::string target );
+		PresidentialPardonForm( PresidentialPardonForm const & src );
+		PresidentialPardonForm &operator=( PresidentialPardonForm const & rhs );
+		virtual ~PresidentialPardonForm( void );
+
+		const std::string &getTarget( void ) const;
+
+		virtual void execute(Bureaucrat const & executer) const;
 
 };
 

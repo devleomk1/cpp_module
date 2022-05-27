@@ -3,11 +3,12 @@
 
 # include <iostream>
 # include <string>
+# include "Form.hpp"
 
 # define SCF_REQ_SIGN_GRADE	145
 # define SCF_REQ_EXEC_GRADE	137
 
-class ShrubberyCreationForm
+class ShrubberyCreationForm : public Form
 {
 
 	public:

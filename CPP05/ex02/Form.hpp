@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:09:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/26 22:48:52 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/27 14:53:11 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,10 @@ public:
 	const unsigned int	&getRequiredSignGrade( void ) const;
 	const unsigned int	&getRequiredExecGrade( void ) const;
 
-	// Addtional Function ex01
 	void beSigned(const Bureaucrat &b);
+	// Addtional Function ex02
+	void executeCheck(const Bureaucrat &b) const;
+	virtual void execute(Bureaucrat const & executer) const = 0;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -56,6 +58,12 @@ public:
 	};
 
 	class GradeTooLowException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+
+	class NotSignedException : public std::exception
 	{
 		public:
 			virtual const char *what() const throw();
