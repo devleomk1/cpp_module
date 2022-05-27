@@ -8,18 +8,23 @@
 # define RRF_REQ_SIGN_GRADE	72
 # define RRF_REQ_EXEC_GRADE	45
 
+# define RRF_STD_TARGET	"RRF_TARGET"
+
 class RobotomyRequestForm : public Form
 {
 
-	public:
-
-		RobotomyRequestForm();
-		RobotomyRequestForm( RobotomyRequestForm const & src );
-		~RobotomyRequestForm();
-
-		RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
-
 	private:
+		std::string	_target;
+	public:
+		RobotomyRequestForm( void );
+		RobotomyRequestForm( std::string target );
+		RobotomyRequestForm( RobotomyRequestForm const & src );
+		RobotomyRequestForm &operator=( RobotomyRequestForm const & rhs );
+		virtual ~RobotomyRequestForm( void );
+
+		const std::string &getTarget( void ) const;
+		virtual void execute(Bureaucrat const & executer) const;
+
 
 };
 

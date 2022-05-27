@@ -4,12 +4,17 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-RobotomyRequestForm::RobotomyRequestForm()
+RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", RRF_REQ_SIGN_GRADE, RRF_REQ_EXEC_GRADE), _target(RRF_STD_TARGET)
+{
+}
+
+RobotomyRequestForm::RobotomyRequestForm( std::string target ) : Form("RobotomyRequestForm", RRF_REQ_SIGN_GRADE, RRF_REQ_EXEC_GRADE), _target(target)
 {
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
 {
+	*this = src;
 }
 
 
@@ -28,28 +33,40 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	if ( this != &rhs )
+	{
+		this->_target = rhs.getTarget();
+	}
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, RobotomyRequestForm const & i )
+/*
+** --------------------------------- GETTER ----------------------------------
+*/
+
+const std::string &RobotomyRequestForm::getTarget( void ) const
 {
-	//o << "Value = " << i.getValue();
-	return o;
+	return (this->_target);
 }
 
-
 /*
-** --------------------------------- METHODS ----------------------------------
+** --------------------------------- EXECUTE ---------------------------------
 */
 
+void RobotomyRequestForm::execute(Bureaucrat const & executer) const
+{
+	int	random_box;
 
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
+	this->executeCheck(executer);
+	std::cout << "Wwiiiiiiiiinnnnng~ wwwwiwng wiwwiwiwiwigg (50% Success)" << std::endl;
+	srand (time(NULL));
+	random_box = rand() % 2;
+	if (random_box)
+		std::cout << BLUE << this->getTarget() << RESET "'s robotic surgery was a" GREEN " huge success." RESET << std::endl;
+	else
+		std::cout << BLUE << this->getTarget() << RESET "'s robotic surgery was a" RED " failed." RESET << std::endl;
+
+}
 
 
 /* ************************************************************************** */

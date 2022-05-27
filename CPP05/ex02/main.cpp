@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:25:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/27 15:17:59 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/27 16:01:42 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,16 @@ int main( void )
 	bob.signForm(*ppf);
 	bob.executeForm(*ppf);
 
-	delete ppf;
 
+	printTitle("ROBOTOMY REQUEST");
+	Bureaucrat kim("kim", 1);
+	Form *rrf = new RobotomyRequestForm("Good Kid");
+
+	kim.executeForm(*rrf);
+	kim.signForm(*rrf);
+	kim.executeForm(*rrf);
+
+	delete ppf;
+	delete rrf;
 	return (0);
 }

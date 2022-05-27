@@ -6,7 +6,7 @@
 #    By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 14:29:20 by jisokang          #+#    #+#              #
-#    Updated: 2022/05/27 14:57:51 by jisokang         ###   ########.fr        #
+#    Updated: 2022/05/27 15:57:20 by jisokang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ RM		= rm -rf
 SRCS	=	Bureaucrat.cpp\
 			Form.cpp\
 			PresidentialPardonForm.cpp\
+			RobotomyRequestForm.cpp\
 			main.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
