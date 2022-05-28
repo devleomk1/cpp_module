@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <fstream>
 # include "Form.hpp"
 
 # define SCF_REQ_SIGN_GRADE	145
@@ -11,15 +12,13 @@
 class ShrubberyCreationForm : public Form
 {
 
+	private:
 	public:
-
 		ShrubberyCreationForm();
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
-		~ShrubberyCreationForm();
-
+		virtual ~ShrubberyCreationForm();
 		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
 
-	private:
 
 };
 
