@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:25:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/28 21:18:28 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/28 23:20:47 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 #include <iomanip>
 
 void printSingleBar()
@@ -36,41 +37,20 @@ void printTestPass()
 
 int main( void )
 {
-	Bureaucrat kim("Kim", 1);
-	Bureaucrat jim("Jim", 7);
-	Bureaucrat bob("Bob", 42);
-	Bureaucrat tom("Tom", 100);
+	Intern someRandomIntern;
+	Form *ppf;
+	Form *rrf;
+	Form *scf;
+	Form *wtf;
 
-	printTitle("PRESIDENTIAL PARDON");
-	Form *ppf = new PresidentialPardonForm("Rebel");
-
-	std::cout << *ppf;
-	bob.executeForm(*ppf);
-	bob.signForm(*ppf);
-	jim.signForm(*ppf);
-	std::cout << *ppf;
-	jim.executeForm(*ppf);
-	kim.executeForm(*ppf);
-
-	printTitle("SHRUBBERY CREATION");
-	Form *scf = new ShrubberyCreationForm("MyHome");
-	std::cout << *scf;
-	bob.executeForm(*scf);
-	bob.signForm(*scf);
-	bob.executeForm(*scf);
-
-	printTitle("ROBOTOMY REQUEST");
-	Form *rrf = new RobotomyRequestForm("Good Kid");
-
-	std::cout << *rrf;
-	kim.executeForm(*rrf);
-	kim.signForm(*rrf);
-	kim.executeForm(*rrf);
-
-	printSingleBar();
+	ppf = someRandomIntern.makeForm("presidential pardon", "Me");
+	rrf = someRandomIntern.makeForm("robotomy request", "Kim");
+	scf = someRandomIntern.makeForm("shrubbery creation", "Company");
+	wtf = someRandomIntern.makeForm("wtf", "BOSS");
 
 	delete ppf;
-	delete scf;
 	delete rrf;
+	delete scf;
+	delete wtf;
 	return (0);
 }

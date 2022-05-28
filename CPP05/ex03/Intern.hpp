@@ -20,5 +20,11 @@ class Intern
 		virtual ~Intern( void );
 
 		Form *makeForm( const std::string &form_name, const std::string &target);
+
+		class FormNotMatchException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 };
 #endif /* *********************************************************** Intern_H */
