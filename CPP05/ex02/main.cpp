@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:25:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/27 16:01:42 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/28 17:09:13 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,17 @@ int main( void )
 	Bureaucrat bob("Bob", 20);
 	Form *ppf = new PresidentialPardonForm("Badman");
 
+	std::cout << *ppf;
 	bob.executeForm(*ppf);
 	bob.signForm(*ppf);
 	bob.executeForm(*ppf);
 
+	printTitle("SHRUBBERY CREATION");
+	Form *scf = new ShrubberyCreationForm("My Home");
+	std::cout << *scf;
+	bob.executeForm(*scf);
+	bob.signForm(*scf);
+	bob.executeForm(*scf);
 
 	printTitle("ROBOTOMY REQUEST");
 	Bureaucrat kim("kim", 1);

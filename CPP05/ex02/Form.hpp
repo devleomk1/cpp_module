@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:09:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/27 14:53:11 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/28 16:24:51 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ public:
 	void beSigned(const Bureaucrat &b);
 	// Addtional Function ex02
 	void executeCheck(const Bureaucrat &b) const;
-	virtual void execute(Bureaucrat const & executer) const = 0;
+	virtual void execute(Bureaucrat const & executer) const = 0;		//추상 클래스
 
 	class GradeTooHighException : public std::exception
 	{

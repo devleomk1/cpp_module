@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/28 17:20:47 by jisokang          #+#    #+#             */
+/*   Updated: 2022/05/28 17:20:47 by jisokang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 
@@ -8,6 +20,7 @@
 # define PPF_REQ_SIGN_GRADE	25
 # define PPF_REQ_EXEC_GRADE	5
 
+# define PPF_FORM_NAME	"PresidentialPardonForm"
 # define PPF_STD_TARGET	"PPF_TARGET"
 
 class PresidentialPardonForm : public Form
@@ -27,7 +40,4 @@ class PresidentialPardonForm : public Form
 		virtual void execute(Bureaucrat const & executer) const;
 
 };
-
-std::ostream &			operator<<( std::ostream & o, PresidentialPardonForm const & i );
-
 #endif /* ****************************************** PRESIDENTIALPARDONFORM_H */
