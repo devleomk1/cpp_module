@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/28 17:58:25 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 01:19:54 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat() : _name(DEFAULT_NAME), _grade(DEFAULT_GRADE)
 		<< std::endl;
 }
 
-Bureaucrat::Bureaucrat( std::string name, int grade) : _name(name)
+Bureaucrat::Bureaucrat( const std::string name, int grade) : _name(name)
 {
 	std::cout
 		<< "[" GREEN "Constructor" RESET " (Bureaucrat 💼)]"
@@ -87,12 +87,12 @@ void Bureaucrat::decreGrade()
 	this->_grade++;
 }
 
-const char *Bureaucrat::GradeTooHighException::what( void ) const throw() //여기에 throw는 왜 붙일 까?
+const char *Bureaucrat::GradeTooHighException::what( void ) const throw()
 {
 	return ("Grade Too High!");
 }
 
-const char *Bureaucrat::GradeTooLowException::what( void ) const throw() //여기에 throw는 왜 붙일 까?
+const char *Bureaucrat::GradeTooLowException::what( void ) const throw()
 {
 	return ("Grade Too Low!");
 }

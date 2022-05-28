@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:08 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/26 22:10:33 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 01:18:17 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ private:
 	unsigned int        _grade; //ranges from 1 (highest possible grade) to 150 (lowest possible grade).
 public:
 	Bureaucrat( void );
-	Bureaucrat( std::string name, int grade );
+	Bureaucrat( const std::string name, int grade );
 	Bureaucrat( const Bureaucrat &src );
 	Bureaucrat &operator=( const Bureaucrat &src );
 	virtual ~Bureaucrat( void );

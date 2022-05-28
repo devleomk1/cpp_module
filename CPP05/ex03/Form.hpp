@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:09:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/28 22:34:35 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 01:18:17 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ private:
 	const unsigned int		_required_exec_grade;
 public:
 	Form( void );
-	Form( const std::string name, unsigned int required_sign_grade, unsigned int required_exec_grade );
+	Form( const const std::string name, const unsigned int required_sign_grade, const unsigned int required_exec_grade );
 	Form( const Form &src );
 	Form &operator=( const Form &src );
 	virtual ~Form( void );

@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 17:20:17 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/28 17:20:18 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 01:34:00 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( std::string target )
+ShrubberyCreationForm::ShrubberyCreationForm( const std::string target )
 	: Form(SCF_FORM_NAME, SCF_REQ_SIGN_GRADE, SCF_REQ_EXEC_GRADE), _target(target)
 {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src )
-	: Form(SCF_FORM_NAME, SCF_REQ_SIGN_GRADE, SCF_REQ_EXEC_GRADE)
+	: Form(SCF_FORM_NAME, SCF_REQ_SIGN_GRADE, SCF_REQ_EXEC_GRADE), _target(src.getTarget())
 {
 	*this = src;
 }
@@ -49,9 +49,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 ShrubberyCreationForm &ShrubberyCreationForm::operator=( ShrubberyCreationForm const & rhs )
 {
 	if ( this != &rhs )
-	{
-		this->_target = rhs.getTarget();
-	}
+		return *this;
 	return *this;
 }
 

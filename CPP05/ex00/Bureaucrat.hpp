@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:08 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/25 14:01:19 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 01:18:17 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ private:
 	unsigned int        _grade; //ranges from 1 (highest possible grade) to 150 (lowest possible grade).
 public:
 	Bureaucrat( void );
-	Bureaucrat( std::string name, int grade );
+	Bureaucrat( const std::string name, int grade );
 	Bureaucrat( const Bureaucrat &src );
 	Bureaucrat &operator=( const Bureaucrat &src );
 	virtual ~Bureaucrat( void );

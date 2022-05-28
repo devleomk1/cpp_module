@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:25:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/28 18:05:17 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 01:29:32 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ void printTestPass()
 
 int main( void )
 {
+	PresidentialPardonForm ppf1;
+	PresidentialPardonForm ppf2(ppf1);
+
+	std::cout << ppf1;
+	std::cout << ppf2;
+
 	Bureaucrat kim("Kim", 1);
 	Bureaucrat jim("Jim", 7);
 	Bureaucrat bob("Bob", 42);

@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 17:20:55 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/28 17:20:56 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 01:23:17 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ class RobotomyRequestForm : public Form
 {
 
 	private:
-		std::string	_target;
+		const std::string	_target;
 	public:
 		RobotomyRequestForm( void );
-		RobotomyRequestForm( std::string target );
+		RobotomyRequestForm( const std::string target );
 		RobotomyRequestForm( RobotomyRequestForm const & src );
 		RobotomyRequestForm &operator=( RobotomyRequestForm const & rhs );
 		virtual ~RobotomyRequestForm( void );

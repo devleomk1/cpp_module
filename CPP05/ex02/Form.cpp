@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:09:00 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/27 14:53:03 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 01:18:17 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Form::Form()
 		<< std::endl;
 }
 
-Form::Form(std::string name, unsigned int required_sign_grade, unsigned int required_exec_grade)
+Form::Form(const std::string name, const unsigned int required_sign_grade, const unsigned int required_exec_grade)
 	: _name(name), _sign(DEFAULT_FORM_SIGN), _required_sign_grade(required_sign_grade), _required_exec_grade(required_exec_grade)
 {
 	 std::cout

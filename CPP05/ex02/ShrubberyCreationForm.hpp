@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 17:20:28 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/28 17:20:28 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 01:23:17 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ class ShrubberyCreationForm : public Form
 {
 
 	private:
-		std::string	_target;
+		const std::string	_target;
 	public:
 		ShrubberyCreationForm( void );
-		ShrubberyCreationForm( std::string target );
+		ShrubberyCreationForm( const std::string target );
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
 		ShrubberyCreationForm &operator=( ShrubberyCreationForm const & rhs );
 		virtual ~ShrubberyCreationForm();

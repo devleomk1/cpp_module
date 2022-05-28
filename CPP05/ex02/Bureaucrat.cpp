@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/28 21:18:30 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 01:18:17 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat() : _name(DEFAULT_NAME), _grade(DEFAULT_GRADE)
 		<< std::endl;
 }
 
-Bureaucrat::Bureaucrat( std::string name, int grade) : _name(name)
+Bureaucrat::Bureaucrat( const std::string name, int grade) : _name(name)
 {
 	std::cout
 		<< "[" GREEN "Constructor" RESET " (Bureaucrat 💼)]"

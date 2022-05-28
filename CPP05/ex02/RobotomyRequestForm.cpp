@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 17:20:19 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/28 17:20:20 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 01:31:42 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ RobotomyRequestForm::RobotomyRequestForm()
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm( std::string target )
+RobotomyRequestForm::RobotomyRequestForm( const std::string target )
 	: Form(RRF_FORM_NAME, RRF_REQ_SIGN_GRADE, RRF_REQ_EXEC_GRADE), _target(target)
 {
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
-	: Form(RRF_FORM_NAME, RRF_REQ_SIGN_GRADE, RRF_REQ_EXEC_GRADE)
+	: Form(RRF_FORM_NAME, RRF_REQ_SIGN_GRADE, RRF_REQ_EXEC_GRADE), _target(src.getTarget())
 {
 	*this = src;
 }
@@ -48,9 +48,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 RobotomyRequestForm &RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
 {
 	if ( this != &rhs )
-	{
-		this->_target = rhs.getTarget();
-	}
+		return *this;
 	return *this;
 }
 
