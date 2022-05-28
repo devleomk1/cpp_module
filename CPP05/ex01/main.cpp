@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:25:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/26 22:52:59 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/28 17:48:01 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int main( void )
 	printTitle("Normal Sign Case");
 	try
 	{
-		Bureaucrat bure_t("Tom", 15);
+		Bureaucrat tom("Tom", 15);
 		Form form_a("Form-A", 20, 20);
-		std::cout << bure_t;
+		std::cout << tom;
 		std::cout << form_a;
-		bure_t.signForm(form_a);
+		tom.signForm(form_a);
 		std::cout << form_a;
 		printTestPass();
 	}
@@ -60,11 +60,11 @@ int main( void )
 	printTitle("You Can't Sign Case");
 	try
 	{
-		Bureaucrat bure_t("Pon", 100);
+		Bureaucrat pon("Pon", 100);
 		Form form_a("Form-A", 20, 20);
-		std::cout << bure_t;
+		std::cout << pon;
 		std::cout << form_a;
-		bure_t.signForm(form_a);
+		pon.signForm(form_a);
 		std::cout << form_a;
 		printTestPass();
 	}

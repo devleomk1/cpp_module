@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:25:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/28 17:09:13 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/28 18:05:17 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include <iomanip>
+
+void printSingleBar()
+{
+	std::cout << std::endl << std::setw(35) << std::setfill('=') << "" << std::endl;
+}
 
 void printTitle( std::string str )
 {
@@ -31,32 +36,41 @@ void printTestPass()
 
 int main( void )
 {
-	printTitle("TEST PASS CASE");
+	Bureaucrat kim("Kim", 1);
+	Bureaucrat jim("Jim", 7);
+	Bureaucrat bob("Bob", 42);
+	Bureaucrat tom("Tom", 100);
 
-	Bureaucrat bob("Bob", 20);
-	Form *ppf = new PresidentialPardonForm("Badman");
+	printTitle("PRESIDENTIAL PARDON");
+	Form *ppf = new PresidentialPardonForm("Rebel");
 
 	std::cout << *ppf;
 	bob.executeForm(*ppf);
 	bob.signForm(*ppf);
-	bob.executeForm(*ppf);
+	jim.signForm(*ppf);
+	std::cout << *ppf;
+	jim.executeForm(*ppf);
+	kim.executeForm(*ppf);
 
 	printTitle("SHRUBBERY CREATION");
-	Form *scf = new ShrubberyCreationForm("My Home");
+	Form *scf = new ShrubberyCreationForm("MyHome");
 	std::cout << *scf;
 	bob.executeForm(*scf);
 	bob.signForm(*scf);
 	bob.executeForm(*scf);
 
 	printTitle("ROBOTOMY REQUEST");
-	Bureaucrat kim("kim", 1);
 	Form *rrf = new RobotomyRequestForm("Good Kid");
 
+	std::cout << *rrf;
 	kim.executeForm(*rrf);
 	kim.signForm(*rrf);
 	kim.executeForm(*rrf);
 
+	printSingleBar();
+
 	delete ppf;
+	delete scf;
 	delete rrf;
 	return (0);
 }

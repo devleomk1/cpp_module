@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/25 17:02:30 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/28 17:58:25 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Bureaucrat::Bureaucrat( std::string name, int grade) : _name(name)
 
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat &src )
+Bureaucrat::Bureaucrat( const Bureaucrat &src ) : _name(DEFAULT_NAME)
 {
 	std::cout << "[" YELLOW "Copy" GREEN " constructor" RESET " (Bureaucrat 💼)]" << std::endl;
 	*this = src;

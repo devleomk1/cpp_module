@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/26 22:46:42 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/28 18:00:04 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Bureaucrat::Bureaucrat( std::string name, int grade) : _name(name)
 
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat &src )
+Bureaucrat::Bureaucrat( const Bureaucrat &src ) : _name(DEFAULT_NAME)
 {
 	std::cout << "[" YELLOW "Copy" GREEN " constructor" RESET " (Bureaucrat 💼)]" << std::endl;
 	*this = src;
@@ -92,11 +92,11 @@ void Bureaucrat::signForm(Form &f) const
 	try
 	{
 		f.beSigned(*this);
-		std::cout << MAGENTA << this->getName() << RESET " signed " CYAN << f.getName() << RESET << std::endl;
+		std::cout << MAGENTA << this->getName() << RESET "(Gr." << this->getGrade() << ") signed " CYAN << f.getName() << RESET << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << MAGENTA << this->getName() << RESET " couldn't sign " CYAN << f.getName() << RESET " because " YELLOW << e.what() << RESET << std::endl;
+		std::cerr << MAGENTA << this->getName() << RESET "(Gr." << this->getGrade() << ") couldn't sign " CYAN << f.getName() << RESET " because " YELLOW << e.what() << RESET << std::endl;
 	}
 }
 
