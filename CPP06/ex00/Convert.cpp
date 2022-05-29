@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 03:25:43 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/29 03:51:05 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 16:15:27 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,15 @@ Convert::Convert( void )
 
 Convert::Convert( const std::string &input ) : _input(input)
 {
-	
+	try
+	{
+		double	value = std::stod(input);
+
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "[🚨Exception]: " YELLOW << e.what() << RESET "\n";
+	}
 }
 
 Convert::Convert( const Convert & src )
