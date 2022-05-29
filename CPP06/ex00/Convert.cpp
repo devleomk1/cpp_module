@@ -22,7 +22,7 @@ Convert::Convert( void )
 
 Convert::Convert( const std::string &input ) : _input(input)
 {
-	std::cout << "Hello!\n";
+	
 }
 
 Convert::Convert( const Convert & src )

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:25:04 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/29 01:29:32 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/29 10:24:58 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,9 @@ void printTestPass()
 
 int main( void )
 {
-	PresidentialPardonForm ppf1;
-	PresidentialPardonForm ppf2(ppf1);
-
-	std::cout << ppf1;
-	std::cout << ppf2;
-
 	Bureaucrat kim("Kim", 1);
 	Bureaucrat jim("Jim", 7);
 	Bureaucrat bob("Bob", 42);
-	Bureaucrat tom("Tom", 100);
 
 	printTitle("PRESIDENTIAL PARDON");
 	Form *ppf = new PresidentialPardonForm("Rebel");
