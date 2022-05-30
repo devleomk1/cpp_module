@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 03:21:58 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/29 09:42:09 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/30 07:42:22 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <string>
+# include <cmath>				//isnan(), isinf()
+# include <cctype>
 # include "color.hpp"
 
 class Convert
@@ -29,10 +31,10 @@ class Convert
 		Convert &operator=( Convert const & rhs );
 		~Convert( void );
 
-		char toChar( double );
-		int toInt( double );
-		float toFloat( double );
-		double toDouble( double );
+		char toChar( const double input );
+		int toInt( const double input );
+		float toFloat( const double input );
+		double toDouble( const double input );
 
 		const std::string &getInput( void ) const;
 };

@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 03:25:43 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/29 16:15:27 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/30 07:43:13 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ std::ostream &operator<<( std::ostream & stream, Convert const & i )
 
 
 /*
-** --------------------------------- METHODS ----------------------------------
+** --------------------------------- GETTER ----------------------------------
 */
 
 const std::string &Convert::getInput( void ) const
@@ -80,6 +80,43 @@ const std::string &Convert::getInput( void ) const
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+char Convert::toChar( const double input )
+{
+	char	value = static_cast<char>(input);
+
+	if (std::isnan(value) || std::isinf(value) )
+	{
+		/* code */
+	}
+
+	if(std::isprint(value))
+		return (value);
+
+	/* 중간 체크 */
+}
+
+int Convert::toInt( const double input )
+{
+	int	value;
+	value = static_cast<int>(input);
+	/* 중간 체크 */
+	return (value);
+}
+
+float Convert::toFloat( const double input )
+{
+	float	value;
+	value = static_cast<float>(input);
+	/* 중간 체크 */
+	return (value);
+}
+
+double Convert::toDouble( const double input )
+{
+	/* only check is inf or nan */
+	return (input);
+}
 
 
 /* ************************************************************************** */
