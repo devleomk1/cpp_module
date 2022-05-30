@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 03:21:58 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/30 10:47:03 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:20:56 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <string>
 # include <cmath>				//isnan(), isinf()
 # include <cctype>
+# include <iomanip>
+# include <limits>
+# include <exception>
 # include "color.hpp"
 
 class Convert
@@ -44,6 +47,7 @@ class Convert
 
 		const std::string &getInput( void ) const;
 		const double &getValue( void ) const;
+
 };
 
 std::ostream &operator<<( std::ostream & o, Convert const & i );

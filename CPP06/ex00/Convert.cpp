@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 03:25:43 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/30 11:06:16 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:21:00 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,10 @@ void	Convert::printChar()
 	{
 		std::cout << "Non displayable" << std::endl;
 	}
+	else if (getValue() >= 177)
+	{
+		std::cout << "Non displayable (Overflow)" << std::endl;
+	}
 	else
 	{
 		std::cout << "'" << toChar() << "'" << std::endl;
@@ -127,6 +131,10 @@ void	Convert::printInt()
 	{
 		std::cout << "impossible" << std::endl;
 	}
+	else if(std::numeric_limits<int>::max() < getValue() || std::numeric_limits<int>::min() > getValue())
+	{
+		std::cout << "Int Overflow" << std::endl;
+	}
 	else
 	{
 		std::cout << toInt() << std::endl;
@@ -138,11 +146,11 @@ void	Convert::printFloat()
 	std::cout << "float: ";
 	if (toFloat() - toInt() == 0)
 	{
-		std::cout << toFloat() << ".0f" << std::endl;
+		std::cout << std::setprecision(std::numeric_limits<float>::digits10) << toFloat() << ".0f" << std::endl;
 	}
 	else
 	{
-		std::cout << toFloat() << "f" << std::endl;
+		std::cout << std::setprecision(std::numeric_limits<float>::digits10) << toFloat() << "f" << std::endl;
 	}
 
 }
@@ -152,11 +160,11 @@ void	Convert::printDouble()
 	std::cout << "double: ";
 	if (toDouble() - toInt() == 0)
 	{
-		std::cout << toDouble() << ".0" << std::endl;
+		std::cout << std::setprecision(std::numeric_limits<double>::digits10) << toDouble() << ".0" << std::endl;
 	}
 	else
 	{
-		std::cout << toDouble() << std::endl;
+		std::cout << std::setprecision(std::numeric_limits<double>::digits10) << toDouble() << std::endl;
 	}
 
 }
