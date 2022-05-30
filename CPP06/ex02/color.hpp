@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   color.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/29 11:43:23 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/30 13:21:17 by jisokang         ###   ########.fr       */
+/*   Created: 2022/01/20 00:59:06 by jisokang          #+#    #+#             */
+/*   Updated: 2022/03/11 14:12:41 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#ifndef COLOR_HPP
+# define COLOR_HPP
 
-int	main(void)
-{
-	Data	a(2019, "COVID-19");
-	uintptr_t ptr = serialize(&a);
-	Data	*b = deserialize(ptr);
+# define RED		"\x1b[31m"
+# define GREEN		"\x1b[32m"
+# define BLUE		"\x1b[34m"
+# define YELLOW		"\x1b[33m"
+# define MAGENTA	"\x1b[35m"
+# define CYAN		"\x1b[36m"
 
-	std::cout << "a:\n" << a << std::endl;
-	std::cout << "&a: " << &a << std::endl;
-	std::cout << "ptr: "<< ptr << std::endl;
-	std::cout << "b: " << b << std::endl;
-	std::cout << "*b:\n" << *b << std::endl;
-	return (0);
-}
+# define RESET		"\x1b[0m"
+
+#endif

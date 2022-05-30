@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 03:25:43 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/30 07:43:13 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/30 11:06:16 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,16 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Convert::Convert( void )
+Convert::Convert( void ) : _input(NULL), _value(0.0)
 {
 }
 
-Convert::Convert( const std::string &input ) : _input(input)
+Convert::Convert( const std::string &input ) : _input(input), _value(std::stod(_input))
 {
-	try
-	{
-		double	value = std::stod(input);
 
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "[🚨Exception]: " YELLOW << e.what() << RESET "\n";
-	}
 }
 
-Convert::Convert( const Convert & src )
+Convert::Convert( const Convert & src ) : _value(std::stod(_input))
 {
 	*this = src;
 }
@@ -77,46 +69,96 @@ const std::string &Convert::getInput( void ) const
 	return(this->_input);
 }
 
+const double &Convert::getValue( void ) const
+{
+	return(this->_value);
+}
+
+
 /*
-** --------------------------------- ACCESSOR ---------------------------------
+** --------------------------------- toType ---------------------------------
 */
 
-char Convert::toChar( const double input )
+char Convert::toChar( void )
 {
-	char	value = static_cast<char>(input);
+	return (static_cast<char>(_value));
+}
 
-	if (std::isnan(value) || std::isinf(value) )
+int Convert::toInt( void )
+{
+	return (static_cast<int>(_value));
+}
+
+float Convert::toFloat( void )
+{
+	return (static_cast<float>(_value));
+}
+
+double Convert::toDouble( void )
+{
+	return (static_cast<double>(_value));
+}
+
+/*
+** --------------------------------- printType ---------------------------------
+*/
+
+void	Convert::printChar()
+{
+	std::cout << "char: ";
+	if( std::isnan(getValue()) || std::isinf(getValue()) )
 	{
-		/* code */
+		std::cout << "impossible" << std::endl;
+	}
+	else if(!std::isprint(toChar()))
+	{
+		std::cout << "Non displayable" << std::endl;
+	}
+	else
+	{
+		std::cout << "'" << toChar() << "'" << std::endl;
+	}
+}
+
+void	Convert::printInt()
+{
+	std::cout << "int: ";
+	if( std::isnan(getValue()) || std::isinf(getValue()) )
+	{
+		std::cout << "impossible" << std::endl;
+	}
+	else
+	{
+		std::cout << toInt() << std::endl;
+	}
+}
+
+void	Convert::printFloat()
+{
+	std::cout << "float: ";
+	if (toFloat() - toInt() == 0)
+	{
+		std::cout << toFloat() << ".0f" << std::endl;
+	}
+	else
+	{
+		std::cout << toFloat() << "f" << std::endl;
 	}
 
-	if(std::isprint(value))
-		return (value);
-
-	/* 중간 체크 */
 }
 
-int Convert::toInt( const double input )
+void	Convert::printDouble()
 {
-	int	value;
-	value = static_cast<int>(input);
-	/* 중간 체크 */
-	return (value);
-}
+	std::cout << "double: ";
+	if (toDouble() - toInt() == 0)
+	{
+		std::cout << toDouble() << ".0" << std::endl;
+	}
+	else
+	{
+		std::cout << toDouble() << std::endl;
+	}
 
-float Convert::toFloat( const double input )
-{
-	float	value;
-	value = static_cast<float>(input);
-	/* 중간 체크 */
-	return (value);
 }
-
-double Convert::toDouble( const double input )
-{
-	/* only check is inf or nan */
-	return (input);
-}
-
 
 /* ************************************************************************** */
