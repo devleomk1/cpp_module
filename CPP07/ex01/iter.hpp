@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 21:11:45 by jisokang          #+#    #+#             */
-/*   Updated: 2022/05/31 21:59:48 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/05/31 22:25:09 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 template <typename T>
 template <typename A>
 template <typename B>
-void iter()
+void iter(A)
 {
 
 }
