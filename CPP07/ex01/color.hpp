@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   color.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 21:11:45 by jisokang          #+#    #+#             */
-/*   Updated: 2022/06/01 14:34:22 by jisokang         ###   ########.fr       */
+/*   Created: 2022/01/20 00:59:06 by jisokang          #+#    #+#             */
+/*   Updated: 2022/03/11 14:12:41 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef COLOR_HPP
+# define COLOR_HPP
 
-# include <iostream>
-# include <string>
-# include "color.hpp"
+# define RED		"\x1b[31m"
+# define GREEN		"\x1b[32m"
+# define BLUE		"\x1b[34m"
+# define YELLOW		"\x1b[33m"
+# define MAGENTA	"\x1b[35m"
+# define CYAN		"\x1b[36m"
 
-// ft_lstiter(t_list *lst, void (*f)(void *))
-
-template <typename T>
-void iter(T *arr, size_t len, void (*f)(T&) )
-{
-	for (size_t i = 0; i < len; i++)
-	{
-		f(arr[i]);
-	}
-	std::cout << std::endl;
-}
-
-template <typename T>
-void printElement(T element)
-{
-	std::cout << "[" MAGENTA << element << RESET "] ";
-}
+# define RESET		"\x1b[0m"
 
 #endif
