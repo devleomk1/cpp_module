@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:38:47 by jisokang          #+#    #+#             */
-/*   Updated: 2022/06/01 20:09:07 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/06/02 12:43:50 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,18 @@ class Array
 {
 private:
 	T				*_data;
-	unsigned int	_len;
+	unsigned int	_size;
 public:
 
 	// Default constructor
-	Array( void ) : _data(NULL), _len(0) {};
+	Array( void ) : _data(NULL), _size(0) {};
 
 	// Input constructor
-	Array( const unsigned int n ) : _data(new T[n]), _len(n) {};
+	Array( const unsigned int n ) : _data(new T[n]), _size(n) {};
 
 	//Copy constructor
 	/* 같은 타입만 받아와야 하니까 <T>를 넣어야 한다. */
-	Array( const Array<T> &src ) : _data(NULL), _len(0)
+	Array( const Array<T> &src ) : _data(NULL), _size(0)
 	{
 		*this = src;
 	};
@@ -45,11 +45,11 @@ public:
 	{
 		if ( this != &rhs )
 		{
-			if (this->_len > 0)
+			if (this->_size > 0)
 				delete[] _data;
-			this->_len = rhs._len;
-			this->_data = new T[rhs._len];
-			for (size_t i = 0; i < this->_len ; i++)
+			this->_size = rhs._size;
+			this->_data = new T[rhs._size];
+			for (size_t i = 0; i < this->_size ; i++)
 			{
 				this->_data[i] = rhs._data[i];
 			}
@@ -63,14 +63,20 @@ public:
 		delete[] _data;
 	};
 
-	T &operator[]( const int n ) const
+	//T &operator[]( const int n ) const
+	T &operator[]( const unsigned int n ) const
 	{
-		if (n < 0 || static_cast<unsigned int>(n) >= this->_len)
+		if (n < 0 || static_cast<unsigned int>(n) >= this->_size)
 		{
 			throw WrongIndexException();
 		}
 		return (this->_data[n]);
 	};
+
+	unsigned int size() const
+	{
+		return (this->_size);
+	}
 
 	class WrongIndexException : public std::exception
 	{

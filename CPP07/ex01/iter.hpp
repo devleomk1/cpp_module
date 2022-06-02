@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 21:11:45 by jisokang          #+#    #+#             */
-/*   Updated: 2022/06/01 14:34:22 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:54:06 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 // ft_lstiter(t_list *lst, void (*f)(void *))
 
+// void iter(T *arr, size_t len, const void (*f)(T&) )
+
 template <typename T>
 void iter(T *arr, size_t len, void (*f)(T&) )
 {
@@ -26,7 +28,6 @@ void iter(T *arr, size_t len, void (*f)(T&) )
 	{
 		f(arr[i]);
 	}
-	std::cout << std::endl;
 }
 
 template <typename T>

@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 17:31:53 by jisokang          #+#    #+#             */
-/*   Updated: 2022/06/01 20:09:37 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/06/02 12:44:15 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,11 @@ int main(int, char**)
 	{
 		Array<int> tmp = numbers;
 		std::cout << "tmp :" << tmp;
+
 		Array<int> test(tmp);
 		std::cout << "test:" << test;
+
+		std::cout << "Size(): " << test.size() << std::endl;
 	}
 
 	for (int i = 0; i < MAX_VAL; i++)

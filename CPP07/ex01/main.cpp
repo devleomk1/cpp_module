@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:50:03 by jisokang          #+#    #+#             */
-/*   Updated: 2022/06/01 14:34:00 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:53:35 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,14 @@ int	main (void)
 
 	std::cout << "int\t\t" BLUE "a" RESET "[]: ";
 	iter(a, 5, printElement);
+	std::cout << std::endl;
 
 	std::cout << "char\t\t" BLUE "b" RESET "[]: ";
 	iter(b, 10, printElement);
+	std::cout << std::endl;
 
 	std::cout << "std::string\t" BLUE "s" RESET "[]: ";
 	iter(s, 4, printElement);
+	std::cout << std::endl;
 
 }
