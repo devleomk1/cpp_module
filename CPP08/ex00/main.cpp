@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 12:54:33 by jisokang          #+#    #+#             */
-/*   Updated: 2022/06/02 23:24:24 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/06/02 23:55:57 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,21 @@ int	main( void )
 	{
 		vec.push_back(i);
 	}
-	std::vector<int>::iterator it;
+
 	try
 	{
+		std::vector<int>::iterator it;
+		std::cout << "vec: ";
+		printVec(vec);
 		it = easyfind(vec, 6);
-		std::cout << "easyfind(vec, 6): " << *it << std::endl;
+		std::cout << "easyfind(vec, 6): " BLUE << *it << RESET << std::endl;
+		it = easyfind(vec, 42);
+		std::cout << "easyfind(vec, 42): " BLUE << *it << RESET << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << YELLOW "[🔔Execption]: " << e.what() << RESET "\n";
 	}
-
-
 
 	return (0);
 }
