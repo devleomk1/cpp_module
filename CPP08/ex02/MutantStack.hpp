@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 10:02:48 by jisokang          #+#    #+#             */
-/*   Updated: 2022/06/03 10:12:51 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/06/03 14:19:24 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,16 @@
 # include <string>
 
 template <typename T>
-class MutantStack : public std::stack
+class MutantStack : public std::stack<T>
 {
 private:
-	/* data */
+	T	*_data;
 public:
-	MutantStack(/* args */);
-	~MutantStack();
+	MutantStack( void );
+	MutantStack( MutantStack const & src );
+	MutantStack &operator=( MutantStack const & rhs );
+	~MutantStack( void );
 };
-
-MutantStack::MutantStack(/* args */)
-{
-}
-
-MutantStack::~MutantStack()
-{
-}
 
 
 #endif
