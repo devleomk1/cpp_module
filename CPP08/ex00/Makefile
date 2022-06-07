@@ -6,12 +6,12 @@
 #    By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 14:29:20 by jisokang          #+#    #+#              #
-#    Updated: 2022/06/02 23:50:29 by jisokang         ###   ########.fr        #
+#    Updated: 2022/06/07 09:35:55 by jisokang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME	= a.out
+NAME	= ex00
 
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
