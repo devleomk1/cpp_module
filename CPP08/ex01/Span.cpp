@@ -43,12 +43,6 @@ Span &				Span::operator=( Span const & rhs )
 	return *this;
 }
 
-//std::ostream &			operator<<( std::ostream & o, Span const & i )
-//{
-//	//o << "Value = " << i.getValue();
-//	return o;
-//}
-
 void Span::printVector( unsigned int size )
 {
 	if (_N < size)
@@ -70,6 +64,35 @@ void Span::addNumber( const int num )
 	if (_data.size() >= _N)
 		throw WrongSizePrintException();
 	this->_data.push_back(num);
+}
+
+//void Span::fillNumberAll( void )
+//{
+//	std::vector<int>::iterator b, e;
+
+//	b = _data.begin();
+//	e = ;
+//	std::cout << &e <<std::endl;
+//	while (b != e)
+//	{
+//		std::cout << &b <<std::endl;
+//		_data.push_back(42);
+//		b++;
+//	}
+
+//}
+
+void Span::addNumbers(std::vector<int>::iterator const &begin, std::vector<int>::iterator const &end)
+{
+	std::vector<int>::iterator iter = begin;
+
+	while (iter != end) {
+    	if (_data.size() == _N)
+			throw std::runtime_error("Span is already full!");
+
+		_data.push_back(*iter);
+    	iter++;
+	}
 }
 
 unsigned int	Span::longestSpan( void )
