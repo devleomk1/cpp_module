@@ -46,7 +46,7 @@ Span &				Span::operator=( Span const & rhs )
 void Span::printVector( unsigned int size )
 {
 	if (_N < size)
-		throw WrongSizePrintException();
+		throw WrongSizeException();
 	for (size_t i = 0; i < size ; i++)
 	{
 		std::cout << "[" MAGENTA << _data.at(i) << RESET "] ";
@@ -62,43 +62,26 @@ void Span::printVector( unsigned int size )
 void Span::addNumber( const int num )
 {
 	if (_data.size() >= _N)
-		throw WrongSizePrintException();
+		throw WrongAddNumberException();
 	this->_data.push_back(num);
 }
-
-//void Span::fillNumberAll( void )
-//{
-//	std::vector<int>::iterator b, e;
-
-//	b = _data.begin();
-//	e = ;
-//	std::cout << &e <<std::endl;
-//	while (b != e)
-//	{
-//		std::cout << &b <<std::endl;
-//		_data.push_back(42);
-//		b++;
-//	}
-
-//}
 
 void Span::addNumbers(std::vector<int>::iterator const &begin, std::vector<int>::iterator const &end)
 {
 	std::vector<int>::iterator iter = begin;
 
 	while (iter != end) {
-    	if (_data.size() == _N)
-			throw std::runtime_error("Span is already full!");
-
+		if (_data.size() == _N)
+			throw std::runtime_error("Span is full!");
 		_data.push_back(*iter);
-    	iter++;
+		iter++;
 	}
 }
 
 unsigned int	Span::longestSpan( void )
 {
 	if (_N <= 1)
-		throw WrongSizePrintException();
+		throw WrongSizeException();
 
 	std::vector<int> tmp = this->_data;
 	std::vector<int>::iterator min, max;
@@ -113,7 +96,7 @@ unsigned int	Span::longestSpan( void )
 unsigned int	Span::shortestSpan( void )
 {
 	if (_N <= 1)
-		throw WrongSizePrintException();
+		throw WrongSizeException();
 
 	std::vector<int>	tmp = this->_data;
 	int					pre_min = INT_MAX;
@@ -127,9 +110,14 @@ unsigned int	Span::shortestSpan( void )
 	return (pre_min);
 }
 
-const char *Span::WrongSizePrintException::what( void ) const throw()
+const char *Span::WrongSizeException::what( void ) const throw()
 {
-	return ("Wrong Size Print");
+	return ("Wrong Size");
+}
+
+const char *Span::WrongAddNumberException::what( void ) const throw()
+{
+	return ("Wrong Add Number");
 }
 
 /* ************************************************************************** */

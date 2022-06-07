@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 10:02:38 by jisokang          #+#    #+#             */
-/*   Updated: 2022/06/07 08:51:43 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/06/07 09:32:05 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void printSingleBar()
 
 int main()
 {
-	//다른 케이스를 추가로 보여줄것 안그러면 KO
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);

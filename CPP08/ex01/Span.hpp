@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 10:03:36 by jisokang          #+#    #+#             */
-/*   Updated: 2022/06/07 09:07:26 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/06/07 09:29:42 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,16 @@ class Span
 		unsigned int	shortestSpan( void );
 		unsigned int	longestSpan( void );
 
-		class WrongSizePrintException : public std::exception
+		class WrongSizeException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
 		};
-		//class Exception : public std::exception
-		//{
-		//	public:
-		//		virtual const char *what() const throw();
-		//};
+		class WrongAddNumberException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 std::ostream &operator<<( std::ostream & o, Span const & i );
