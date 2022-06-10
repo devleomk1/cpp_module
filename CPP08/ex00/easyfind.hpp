@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 12:54:36 by jisokang          #+#    #+#             */
-/*   Updated: 2022/06/02 23:47:34 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/06/07 09:31:37 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ typename T::iterator easyfind(T &t, int target)
 	if (it == t.end())
 		throw std::runtime_error("Target Not Found");
 	return (it);
-
-	//-> find cplusplus.com
-	//iterotr
 }
 
 template <typename T>

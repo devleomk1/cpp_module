@@ -6,11 +6,17 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 10:02:38 by jisokang          #+#    #+#             */
-/*   Updated: 2022/06/03 10:06:28 by jisokang         ###   ########.fr       */
+/*   Updated: 2022/06/07 09:32:05 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+#include <iomanip>
+
+void printSingleBar()
+{
+	std::cout << std::setw(35) << std::setfill('=') << "" << std::endl;
+}
 
 int main()
 {
@@ -18,9 +24,11 @@ int main()
 	mstack.push(5);
 	mstack.push(17);
 
-	std::cout << mstack.top() << std::endl;
+	std::cout << "mstack.top():  " << mstack.top() << std::endl;
 	mstack.pop();
-	std::cout << mstack.size() << std::endl;
+	std::cout << "mstack.size(): " << mstack.size() << std::endl;
+
+	printSingleBar();
 
 	mstack.push(3);
 	mstack.push(5);
@@ -35,9 +43,19 @@ int main()
 	--it;
 	while (it != ite)
 	{
-    std::cout << *it << std::endl;
+	std::cout << *it << std::endl;
 		++it;
 	}
+	printSingleBar();
 	std::stack<int> s(mstack);
+
+	MutantStack<int>::reverse_iterator rit = mstack.rbegin();
+	MutantStack<int>::reverse_iterator rite = mstack.rend();
+
+	while (rit != rite)
+	{
+	std::cout << *rit << std::endl;
+		++rit;
+	}
 	return 0;
 }
