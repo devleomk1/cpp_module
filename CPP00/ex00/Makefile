@@ -3,27 +3,27 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jisokang <jisokang@student.42.fr>          +#+  +:+       +#+         #
+#    By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 17:18:45 by jisokang          #+#    #+#              #
-#    Updated: 2022/05/18 16:53:10 by jisokang         ###   ########.fr        #
+#    Updated: 2022/09/20 14:59:56 by jisokang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= Megaphone
 
-CC		= c++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98
+CXX		= c++
+CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
 
 SRCS	= megaphone.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 all : $(NAME)
 
