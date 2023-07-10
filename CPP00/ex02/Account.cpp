@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 23:44:58 by jisokang          #+#    #+#             */
-/*   Updated: 2023/07/08 20:48:07 by jisokang         ###   ########.fr       */
+/*   Updated: 2023/07/10 16:04:33 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,12 @@ int	Account::getNbWithdrawals( void )
 
 void	Account::_displayTimestamp( void )
 {
-	std::cout << "[19920104_091532] " << std::endl;
+	std::cout << "[19920104_091532] ";
 }
 
 void	Account::displayAccountsInfos( void )
 {
+	_displayTimestamp();
 	std::cout
 		<< "accounts:" << getNbAccounts()
 		<< ";total:" << getTotalAmount()
