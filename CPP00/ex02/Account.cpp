@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 23:44:58 by jisokang          #+#    #+#             */
-/*   Updated: 2023/07/11 22:47:25 by jisokang         ###   ########.fr       */
+/*   Updated: 2023/07/12 15:14:27 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ Account::~Account( void )
 }
 
 /**
- * @brief
+ * @brief Get static _nbAccounts function
  *
  * 정적 함수(static function)를 선언 할 때만 앞에 static을 붙인다.
  * 정적 함수 = 정적 변수를 리턴할 함수
@@ -80,28 +80,40 @@ int Account::getNbAccounts( void )
 	return ( _nbAccounts );
 }
 
+/**
+ * @brief Get _totalAmount function
+ *
+ * @return int _totalAmount
+ */
 int	Account::getTotalAmount( void )
 {
 	return ( _totalAmount );
 }
 
 /**
- * @brief
+ * @brief Get _totalNbDeposits function
  *
- * 아니 함수 이름이 그럼 이러면 안되쥬
- * 아니 왜 토탈 빼먹냐고 불란서 놈들아
- * @return int _totalNbDeposits
+ * @return int _totalNbDeposits 모든 계좌의 예금 횟수 합
  */
 int	Account::getNbDeposits( void )
 {
 	return ( _totalNbDeposits );
 }
 
+/**
+ * @brief Get _totalNbDeposits Function
+ *
+ * @return int _totalNbWithdrawals 모든 계좌의 출금 횟수 합
+ */
 int	Account::getNbWithdrawals( void )
 {
 	return ( _totalNbWithdrawals );
 }
 
+/**
+ * @brief Display Real Timestamp Function
+ *
+ */
 void	Account::_displayTimestamp( void )
 {
 	time_t rawtime;
@@ -115,6 +127,10 @@ void	Account::_displayTimestamp( void )
 	std::cout << "[" << buffer << "] " ;
 }
 
+/**
+ * @brief Display Accounts Infomaiton
+ *
+ */
 void	Account::displayAccountsInfos( void )
 {
 	_displayTimestamp();
@@ -126,6 +142,11 @@ void	Account::displayAccountsInfos( void )
 	<< std::endl;
 }
 
+/**
+ * @brief Make Deposit Function
+ *
+ * @param deposit 예금액
+ */
 void	Account::makeDeposit( int deposit )
 {
 	int p_amount = checkAmount();
@@ -143,6 +164,14 @@ void	Account::makeDeposit( int deposit )
 		<< ";nb_deposits:"	<< ++this->_nbDeposits
 	<< std::endl;
 }
+
+/**
+ * @brief Make Withdrawal Function
+ *
+ * @param withdrawal 출금액
+ * @return true 	출금 성공
+ * @return false 	출금 실패
+ */
 bool	Account::makeWithdrawal( int withdrawal )
 {
 	int p_amount = this->_amount;
@@ -173,11 +202,20 @@ bool	Account::makeWithdrawal( int withdrawal )
 	return true;
 }
 
+/**
+ * @brief Check Amount
+ *
+ * @return int _amount
+ */
 int		Account::checkAmount( void ) const
 {
 	return (this->_amount);
 }
 
+/**
+ * @brief Display Status Function
+ *
+ */
 void	Account::displayStatus( void ) const
 {
 	_displayTimestamp();
